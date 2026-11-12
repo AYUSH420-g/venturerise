@@ -44,7 +44,7 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister }
             aria-label="venturerise home"
           >
             <div className="w-10 h-10 rounded-xl overflow-hidden shadow-sm border border-[#E3DFD5] bg-[#F7F4EC] flex items-center justify-center group-hover:border-[#1554B8] transition-colors">
-              <img src="/favicon.png" alt="venturerise logo" className="w-full h-full object-contain" />
+              <img src="/favicon.svg" alt="venturerise logo" className="w-full h-full object-contain" />
             </div>
             <div>
               <span className="text-xl sm:text-2xl font-black tracking-tight text-[#14243B] lowercase font-sans">

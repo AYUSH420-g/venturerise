@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "venturerise",
   brandWordmark: "venturerise",
   tagline: "Practical Digital Solutions. Built Around You.",
-  email: "venturerise@gmail.com",
+  email: "venturerise.help@gmail.com",
   phone: "+91 8780788923",
   phoneRaw: "+918780788923",
   whatsappUrl: "https://wa.me/918780788923",

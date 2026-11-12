@@ -52,8 +52,8 @@ export default function AboutPage({ setCurrentRoute }) {
             {/* Right Card: Practical Partner Container */}
             <div className="lg:col-span-5">
               <div className="relative rounded-3xl bg-white border border-[#E3DFD5] p-8 shadow-xs">
-                <div className="w-14 h-14 rounded-2xl bg-[#1554B8] text-white flex items-center justify-center font-extrabold text-xl shadow-xs mb-6">
-                  vr
+                <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-xs border border-[#E3DFD5] bg-[#F7F4EC] flex items-center justify-center mb-6">
+                  <img src="/favicon.svg" alt="venturerise logo" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="text-2xl font-black text-[#14243B] mb-1">
                   Practical Digital Partner
