@@ -9,7 +9,6 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import HowItWorksPage from './pages/HowItWorksPage';
-import CampaignsPage from './pages/CampaignsPage';
 import ContactPage from './pages/ContactPage';
 import LegalPage from './pages/LegalPage';
 
@@ -18,7 +17,7 @@ export default function App() {
   const [registerOpen, setRegisterOpen] = useState(false);
   const [toast, setToast] = useState(null);
 
-  // Sync route with browser history
+  // Sync route with browser history & manage page title/meta
   useEffect(() => {
     const handlePopState = () => {
       setCurrentRoute(window.location.pathname || '/');
@@ -26,6 +25,53 @@ export default function App() {
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  useEffect(() => {
+    let title = 'venturerise | Digital Marketing, Websites & AI Automation';
+    let metaDesc = 'venturerise helps small businesses grow with digital marketing, professional websites, practical tech solutions, and AI automation—all built around your goals.';
+
+    switch (currentRoute) {
+      case '/about':
+        title = 'About venturerise | Your Digital Growth Partner';
+        metaDesc = 'venturerise helps small businesses build their online presence, reach relevant customers, and simplify everyday work through marketing, websites, and technology.';
+        break;
+      case '/services':
+        title = 'Our Services | venturerise';
+        metaDesc = 'Explore digital marketing, website development, AI automation, and tech solutions tailored for small businesses.';
+        break;
+      case '/how-it-works':
+        title = 'How We Work | venturerise';
+        metaDesc = 'A clear, practical 6-step process from discovery to launch and ongoing improvement.';
+        break;
+      case '/contact':
+        title = 'Contact venturerise | Discuss Your Project';
+        metaDesc = 'Tell us what is next for your business. Let us discuss your website, marketing, or automation goals.';
+        break;
+      case '/privacy-policy':
+        title = 'Privacy Policy | venturerise';
+        break;
+      case '/terms-and-conditions':
+        title = 'Terms & Conditions | venturerise';
+        break;
+      case '/refund-policy':
+        title = 'Refund & Cancellation Policy | venturerise';
+        break;
+      case '/faq':
+        title = 'Frequently Asked Questions | venturerise';
+        break;
+      case '/campaigns':
+        title = 'Our Services | venturerise';
+        break;
+      default:
+        break;
+    }
+
+    document.title = title;
+    const metaTag = document.querySelector('meta[name="description"]');
+    if (metaTag) {
+      metaTag.setAttribute('content', metaDesc);
+    }
+  }, [currentRoute]);
 
   const navigateTo = (path) => {
     if (window.location.pathname !== path) {
@@ -51,7 +97,9 @@ export default function App() {
       case '/how-it-works':
         return <HowItWorksPage setCurrentRoute={navigateTo} />;
       case '/campaigns':
-        return <CampaignsPage setCurrentRoute={navigateTo} />;
+        // Redirect /campaigns to /services
+        window.history.replaceState({}, '', '/services');
+        return <ServicesPage setCurrentRoute={navigateTo} onOpenRegister={() => setRegisterOpen(true)} />;
       case '/contact':
         return <ContactPage onShowToast={showToast} />;
       case '/privacy-policy':
@@ -74,7 +122,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] text-[#0F172A] flex flex-col font-sans selection:bg-[#005A9C] selection:text-white">
+    <div className="min-h-screen bg-[#F7F4EC] text-[#526175] flex flex-col font-sans selection:bg-[#1554B8] selection:text-white">
       {/* Announcement Top Bar */}
       <TopBar />
 
@@ -96,7 +144,7 @@ export default function App() {
         onShowToast={showToast}
       />
 
-      {/* Register Modal */}
+      {/* Register / Consultation Modal */}
       <RegisterModal
         isOpen={registerOpen}
         onClose={() => setRegisterOpen(false)}

@@ -139,6 +139,11 @@ app.post('/api/lead-estimate', (req, res) => {
   });
 });
 
+// Redirect /campaigns to /services
+app.get('/campaigns', (req, res) => {
+  res.redirect(301, '/services');
+});
+
 // Serve frontend build in production
 const distPath = path.join(__dirname, '..', 'dist');
 app.use(express.static(distPath));
@@ -148,5 +153,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Digital Rise API server running on port ${PORT}`);
+  console.log(`🚀 venturerise server running on port ${PORT}`);
 });

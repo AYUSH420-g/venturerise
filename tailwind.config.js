@@ -7,26 +7,37 @@ export default {
   theme: {
     extend: {
       colors: {
+        brand: {
+          blue: '#1554B8',
+          blueHover: '#104396',
+          paleBlue: '#EAF1FC',
+          navy: '#14243B',
+          body: '#526175',
+          offwhite: '#F7F4EC',
+          white: '#FFFFFF',
+          border: '#E3DFD5',
+          borderLight: '#EDE9E0',
+        },
         sapphire: {
-          50: '#F0F6FB',
-          100: '#E1EEF8',
-          200: '#C2DCF1',
-          300: '#95C2E6',
-          400: '#4A98D3',
-          500: '#1A79C2',
-          600: '#005A9C', /* Target requested color */
-          700: '#004A82',
-          800: '#003D6B',
-          900: '#002F54',
-          950: '#001A30'
+          50: '#EAF1FC',
+          100: '#EAF1FC',
+          200: '#D5E4F9',
+          300: '#ABC7F4',
+          400: '#6496E8',
+          500: '#2A6FDC',
+          600: '#1554B8', /* Primary blue */
+          700: '#104396',
+          800: '#0C3374',
+          900: '#14243B', /* Dark navy */
+          950: '#0A1524'
         },
         offwhite: {
           50: '#FFFFFF',
-          100: '#FBFBFC',
-          200: '#F8F9FA',
-          300: '#F1F3F5',
-          400: '#E9ECEF',
-          500: '#DEE2E6',
+          100: '#FCFAF6',
+          200: '#F7F4EC', /* Primary off-white */
+          300: '#EFECE2',
+          400: '#E3DFD5',
+          500: '#D5D0C4',
         }
       },
       fontFamily: {

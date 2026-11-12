@@ -1,296 +1,236 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { 
-  ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight, CheckCircle2, 
-  TrendingUp, Users, Target, BarChart3, Headphones, Zap, ShieldCheck, 
-  Sparkles, Star, Award, Layers, Clock, PhoneCall 
+  ArrowRight, ArrowUpRight, CheckCircle2, 
+  Target, Globe, Sparkles, Layers, ShieldCheck, 
+  HelpCircle, MessageSquare 
 } from 'lucide-react';
 import { 
-  siteConfig, statsData, liveDashboardData, heroSlides, 
-  whatWeDoCards, whyChooseUsFeatures, processSteps, 
-  testimonials, pricingPlans 
+  siteConfig, heroContent, factualCapabilities, 
+  whatWeDoCards, whyVenturerise, processStepsSummary, 
+  howWeHelpExamples 
 } from '../data/websiteData';
 
-export default function HomePage({ setCurrentRoute, onOpenRegister }) {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  // Auto rotate slides
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 6500);
-    return () => clearInterval(timer);
-  }, []);
-
-  const slide = heroSlides[currentSlide];
-
-  const handleNextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+export default function HomePage({ setCurrentRoute }) {
+  const nav = (route) => {
+    setCurrentRoute(route);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handlePrevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  const getServiceIcon = (id) => {
+    switch (id) {
+      case 'digital-marketing':
+        return <Target className="w-6 h-6 text-[#1554B8]" />;
+      case 'website-dev':
+        return <Globe className="w-6 h-6 text-[#1554B8]" />;
+      case 'ai-automation':
+        return <Sparkles className="w-6 h-6 text-[#1554B8]" />;
+      case 'tech-solutions':
+      default:
+        return <Layers className="w-6 h-6 text-[#1554B8]" />;
+    }
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] text-[#0F172A] overflow-hidden">
+    <div className="min-h-screen bg-[#F7F4EC] text-[#526175] overflow-hidden">
       
-      {/* HERO SECTION */}
-      <section className="relative pt-10 pb-16 lg:pt-16 lg:pb-24 border-b border-slate-200/80 bg-gradient-to-b from-white via-[#F8F9FA] to-white">
-        {/* Soft sapphire ambient lighting */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-[#005A9C]/10 rounded-full blur-[140px] pointer-events-none"></div>
+      {/* 1. HERO SECTION */}
+      <section className="relative pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-[#E3DFD5] bg-[#F7F4EC]">
+        {/* Subtle pale ambient glow */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-[#EAF1FC]/80 rounded-full blur-[140px] pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
-            {/* Left Column: Hero Copy & Dynamic Carousel */}
+            {/* Left Column: Hero Copy */}
             <div className="lg:col-span-7 space-y-6">
               
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E1EEF8] border border-[#C2DCF1] text-[#005A9C] text-xs font-bold uppercase tracking-widest animate-fadeIn shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-[#005A9C] animate-pulse"></span>
-                <span>{slide.badge}</span>
+              {/* Eyebrow */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF1FC] border border-[#D5E4F9] text-[#1554B8] text-xs font-bold uppercase tracking-wider shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-[#1554B8]"></span>
+                <span>{heroContent.eyebrow}</span>
               </div>
 
-              {/* Title */}
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-[#0F172A] tracking-tight leading-[1.15] min-h-[110px] sm:min-h-[140px]">
-                {slide.title.split('. ').map((part, idx) => (
-                  <span key={idx} className="block">
-                    {idx === 1 ? (
-                      <span className="bg-gradient-to-r from-[#005A9C] via-[#0284C7] to-[#004A82] bg-clip-text text-transparent">
-                        {part}.
-                      </span>
-                    ) : (
-                      part + (idx === 0 ? '.' : '')
-                    )}
-                  </span>
-                ))}
+              {/* Headline */}
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-[#14243B] tracking-tight leading-[1.15]">
+                Build Your Presence. <br />
+                <span className="text-[#1554B8]">Grow Your Reach.</span> <br />
+                Simplify Your Work.
               </h1>
 
-              {/* Subtitle */}
-              <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
-                {slide.subtitle}
+              {/* Description */}
+              <p className="text-base sm:text-lg text-[#526175] max-w-xl leading-relaxed">
+                {heroContent.description}
               </p>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <button
-                  onClick={() => {
-                    setCurrentRoute('/contact');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  className="px-7 py-3.5 rounded-full text-sm font-bold text-white bg-[#005A9C] hover:bg-[#004A82] shadow-lg shadow-[#005A9C]/30 hover:shadow-[#005A9C]/40 transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2"
+                  onClick={() => nav('/contact')}
+                  className="px-7 py-3.5 rounded-full text-sm font-bold text-white bg-[#1554B8] hover:bg-[#104396] shadow-sm hover:shadow transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2"
                 >
-                  <span>{slide.primaryCta}</span>
+                  <span>{heroContent.primaryCta}</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
                 <button
-                  onClick={() => {
-                    setCurrentRoute('/services');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  className="px-7 py-3.5 rounded-full text-sm font-bold text-slate-700 hover:text-[#005A9C] bg-white hover:bg-slate-100 border border-slate-300 shadow-sm transition flex items-center gap-2"
+                  onClick={() => nav('/services')}
+                  className="px-7 py-3.5 rounded-full text-sm font-bold text-[#14243B] hover:text-[#1554B8] bg-white hover:bg-[#EAF1FC]/50 border border-[#E3DFD5] shadow-xs transition flex items-center gap-2"
                 >
-                  <span>{slide.secondaryCta}</span>
-                  <ArrowUpRight className="w-4 h-4 text-slate-500" />
+                  <span>{heroContent.secondaryCta}</span>
+                  <ArrowUpRight className="w-4 h-4 text-[#526175]" />
                 </button>
               </div>
 
-              {/* Feature highlight line */}
-              <div className="pt-3 flex items-center gap-3 text-xs font-semibold text-slate-600">
-                <CheckCircle2 className="w-4 h-4 text-[#005A9C] shrink-0" />
-                <span>{slide.highlight}</span>
-              </div>
-
-              {/* Carousel navigation controls */}
-              <div className="flex items-center gap-4 pt-4">
-                <div className="flex items-center gap-2">
-                  {heroSlides.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentSlide(idx)}
-                      className={`h-2 rounded-full transition-all duration-300 ${
-                        currentSlide === idx ? 'w-8 bg-[#005A9C]' : 'w-2 bg-slate-300 hover:bg-slate-400'
-                      }`}
-                      aria-label={`Go to slide ${idx + 1}`}
-                    />
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-1.5 ml-4">
-                  <button
-                    onClick={handlePrevSlide}
-                    className="p-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 hover:text-slate-900 shadow-sm transition"
-                    aria-label="Previous slide"
-                  >
-                    <ChevronLeft className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={handleNextSlide}
-                    className="p-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 hover:text-slate-900 shadow-sm transition"
-                    aria-label="Next slide"
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
+              {/* Supporting Line */}
+              <div className="pt-2 flex items-center gap-2 text-xs font-medium text-[#526175]">
+                <CheckCircle2 className="w-4 h-4 text-[#1554B8] shrink-0" />
+                <span>{heroContent.supportingLine}</span>
               </div>
 
             </div>
 
-            {/* Right Column: Live Campaign Performance Mockup Dashboard */}
+            {/* Right Column: Connected Digital Solutions Card */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-3xl bg-white border border-slate-200 p-6 sm:p-7 shadow-xl shadow-[#005A9C]/10 backdrop-blur-xl">
+              <div className="relative rounded-3xl bg-white border border-[#E3DFD5] p-6 sm:p-7 shadow-md">
                 
                 {/* Header bar of card */}
-                <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+                <div className="flex items-center justify-between pb-4 border-b border-[#E3DFD5]/80">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-3 h-3 rounded-full bg-[#005A9C]"></div>
-                    <div className="w-3 h-3 rounded-full bg-cyan-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-                    <span className="text-xs font-mono font-bold text-slate-700 ml-2">
-                      CAMPAIGN PERFORMANCE
+                    <div className="w-3 h-3 rounded-full bg-[#1554B8]"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#6496E8]"></div>
+                    <div className="w-3 h-3 rounded-full bg-slate-300"></div>
+                    <span className="text-xs font-bold text-[#14243B] ml-2 tracking-wide">
+                      Connected Digital Solutions
                     </span>
                   </div>
-                  <span className="text-[11px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    LIVE STREAM
+                  <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-[#EAF1FC] text-[#1554B8] border border-[#D5E4F9] font-semibold">
+                    Core Capabilities
                   </span>
                 </div>
 
-                {/* Main 3 Metrics */}
+                {/* 3 Practical Capability Spaces */}
                 <div className="grid grid-cols-3 gap-3 my-5">
-                  <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-slate-200/80 text-center">
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">
-                      TOTAL LEADS
+                  <div className="p-3.5 rounded-2xl bg-[#F7F4EC] border border-[#E3DFD5] text-center">
+                    <span className="text-[10px] font-bold text-[#526175] uppercase tracking-wider block mb-1">
+                      STEP 01
                     </span>
-                    <span className="text-xl sm:text-2xl font-black text-slate-900">
-                      {liveDashboardData.totalLeads}
+                    <span className="text-xs sm:text-sm font-bold text-[#14243B] block">
+                      Attract Customers
                     </span>
-                    <span className="text-[10px] text-emerald-600 font-bold block mt-1">
-                      ↑ {liveDashboardData.totalLeadsChange}
-                    </span>
-                  </div>
-
-                  <div className="p-3.5 rounded-2xl bg-[#E1EEF8]/80 border border-[#C2DCF1] text-center shadow-sm">
-                    <span className="text-[10px] font-bold text-[#005A9C] uppercase tracking-wider block mb-1">
-                      QUALIFIED
-                    </span>
-                    <span className="text-xl sm:text-2xl font-black text-[#005A9C]">
-                      {liveDashboardData.qualifiedLeads}
-                    </span>
-                    <span className="text-[10px] text-emerald-600 font-bold block mt-1">
-                      ↑ {liveDashboardData.qualifiedChange}
+                    <span className="text-[10px] text-[#1554B8] font-medium block mt-1">
+                      Targeted Reach
                     </span>
                   </div>
 
-                  <div className="p-3.5 rounded-2xl bg-[#F8F9FA] border border-slate-200/80 text-center">
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-1">
-                      CONVERSION
+                  <div className="p-3.5 rounded-2xl bg-[#EAF1FC] border border-[#D5E4F9] text-center">
+                    <span className="text-[10px] font-bold text-[#1554B8] uppercase tracking-wider block mb-1">
+                      STEP 02
                     </span>
-                    <span className="text-xl sm:text-2xl font-black text-slate-900">
-                      {liveDashboardData.conversionRate}
+                    <span className="text-xs sm:text-sm font-bold text-[#14243B] block">
+                      Capture Enquiries
                     </span>
-                    <span className="text-[10px] text-emerald-600 font-bold block mt-1">
-                      ↑ {liveDashboardData.conversionChange}
+                    <span className="text-[10px] text-[#1554B8] font-medium block mt-1">
+                      Clear Websites
+                    </span>
+                  </div>
+
+                  <div className="p-3.5 rounded-2xl bg-[#F7F4EC] border border-[#E3DFD5] text-center">
+                    <span className="text-[10px] font-bold text-[#526175] uppercase tracking-wider block mb-1">
+                      STEP 03
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold text-[#14243B] block">
+                      Simplify Follow-ups
+                    </span>
+                    <span className="text-[10px] text-[#1554B8] font-medium block mt-1">
+                      AI Automation
                     </span>
                   </div>
                 </div>
 
-                {/* Simulated Chart Bars */}
+                {/* Illustrative Connected Workflow Chart */}
                 <div className="space-y-3 pt-2">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-semibold text-slate-700">Lead Volume Trajectory</span>
-                    <span className="font-black text-[#005A9C]">{liveDashboardData.leadGrowth}</span>
+                    <span className="font-semibold text-[#14243B]">Connected Workflow Progression</span>
+                    <span className="text-[11px] font-medium text-[#526175]">Illustrative model</span>
                   </div>
-                  <div className="grid grid-cols-7 gap-2 items-end h-24 pt-4 px-2 bg-[#F8F9FA] rounded-xl border border-slate-200/80">
-                    <div className="bg-slate-300 rounded-t h-[40%] hover:bg-[#005A9C] transition"></div>
-                    <div className="bg-slate-300 rounded-t h-[55%] hover:bg-[#005A9C] transition"></div>
-                    <div className="bg-slate-300 rounded-t h-[50%] hover:bg-[#005A9C] transition"></div>
-                    <div className="bg-slate-300 rounded-t h-[70%] hover:bg-[#005A9C] transition"></div>
-                    <div className="bg-slate-300 rounded-t h-[65%] hover:bg-[#005A9C] transition"></div>
-                    <div className="bg-slate-300 rounded-t h-[85%] hover:bg-[#005A9C] transition"></div>
-                    <div className="bg-gradient-to-t from-[#005A9C] to-[#0284C7] rounded-t h-[98%] shadow-md shadow-[#005A9C]/30"></div>
+                  <div className="grid grid-cols-7 gap-2 items-end h-24 pt-4 px-2 bg-[#F7F4EC] rounded-xl border border-[#E3DFD5]">
+                    <div className="bg-[#D5E4F9] rounded-t h-[35%]"></div>
+                    <div className="bg-[#D5E4F9] rounded-t h-[45%]"></div>
+                    <div className="bg-[#ABC7F4] rounded-t h-[55%]"></div>
+                    <div className="bg-[#ABC7F4] rounded-t h-[65%]"></div>
+                    <div className="bg-[#6496E8] rounded-t h-[75%]"></div>
+                    <div className="bg-[#2A6FDC] rounded-t h-[85%]"></div>
+                    <div className="bg-[#1554B8] rounded-t h-[95%]"></div>
                   </div>
-                  <div className="flex justify-between text-[10px] text-slate-500 px-2">
-                    <span>Mon</span>
-                    <span>Tue</span>
-                    <span>Wed</span>
-                    <span>Thu</span>
-                    <span>Fri</span>
-                    <span>Sat</span>
-                    <span className="font-bold text-[#005A9C]">Today</span>
+                  <div className="flex justify-between text-[10px] text-[#526175] px-2">
+                    <span>Audit</span>
+                    <span>Scope</span>
+                    <span>Design</span>
+                    <span>Build</span>
+                    <span>Connect</span>
+                    <span>Launch</span>
+                    <span className="font-bold text-[#1554B8]">Review</span>
                   </div>
                 </div>
 
                 {/* Quick sub-bar */}
-                <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-[#005A9C]"></div>
-                    <span className="text-slate-600">Active Campaigns:</span>
-                    <span className="font-bold text-slate-900">{liveDashboardData.campaignsActive}</span>
-                  </div>
-                  <span className="text-emerald-600 font-bold">{liveDashboardData.campaignGrowth} Growth</span>
+                <div className="mt-5 pt-4 border-t border-[#E3DFD5]/80 flex items-center justify-between text-xs text-[#526175]">
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#1554B8]" />
+                    <span>Clear scope & transparent communication</span>
+                  </span>
+                  <button onClick={() => nav('/services')} className="font-bold text-[#1554B8] hover:underline">
+                    View Services →
+                  </button>
                 </div>
 
               </div>
-
-              {/* Floating review badge */}
-              <div className="absolute -bottom-6 -left-6 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xl">
-                <div className="flex -space-x-2">
-                  <div className="w-8 h-8 rounded-full bg-[#005A9C] border-2 border-white flex items-center justify-center font-bold text-xs text-white">R</div>
-                  <div className="w-8 h-8 rounded-full bg-[#0284C7] border-2 border-white flex items-center justify-center font-bold text-xs text-white">P</div>
-                  <div className="w-8 h-8 rounded-full bg-emerald-600 border-2 border-white flex items-center justify-center font-bold text-xs text-white">V</div>
-                </div>
-                <div>
-                  <div className="flex items-center gap-0.5 text-amber-500">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
-                    ))}
-                  </div>
-                  <span className="text-[11px] font-bold text-slate-800">500+ Verified Businesses</span>
-                </div>
-              </div>
-
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* STATS COUNTER BAR */}
-      <section className="py-12 bg-white border-b border-slate-200/80">
+      {/* 2. FACTUAL CAPABILITY CARDS (REPLACING UNVERIFIED STATS) */}
+      <section className="py-12 bg-white border-b border-[#E3DFD5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            {statsData.map((stat, i) => (
-              <div key={i} className="text-center p-4 rounded-2xl bg-[#F8F9FA] border border-slate-200/70 hover:border-[#95C2E6] transition">
-                <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
-                  {stat.value}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {factualCapabilities.map((item, i) => (
+              <div 
+                key={i} 
+                className="p-5 rounded-2xl bg-[#F7F4EC] border border-[#E3DFD5] hover:border-[#1554B8]/40 transition text-left"
+              >
+                <div className="w-9 h-9 rounded-xl bg-[#EAF1FC] border border-[#D5E4F9] flex items-center justify-center text-[#1554B8] mb-3">
+                  {item.icon === 'Target' && <Target className="w-4 h-4" />}
+                  {item.icon === 'Globe' && <Globe className="w-4 h-4" />}
+                  {item.icon === 'Sparkles' && <Sparkles className="w-4 h-4" />}
+                  {item.icon === 'Layers' && <Layers className="w-4 h-4" />}
+                </div>
+                <h3 className="text-base font-bold text-[#14243B] mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-xs text-[#526175] leading-relaxed">
+                  {item.description}
                 </p>
-                <p className="text-sm font-bold text-slate-700 mt-1">
-                  {stat.label}
-                </p>
-                <span className="inline-block text-[11px] font-semibold text-[#005A9C] mt-0.5">
-                  {stat.change}
-                </span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* WHAT WE DO SECTION */}
-      <section className="py-20 lg:py-28 relative bg-[#F8F9FA]">
+      {/* 3. FOUR SERVICE CARDS */}
+      <section className="py-20 lg:py-24 relative bg-[#F7F4EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#005A9C]">
-              WHAT WE DO
+            <span className="text-xs font-bold uppercase tracking-wider text-[#1554B8]">
+              OUR SERVICES
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-              Everything You Need to Grow Online.
+            <h2 className="text-3xl sm:text-4xl font-black text-[#14243B] tracking-tight">
+              Practical Solutions for Small Businesses.
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              From lead generation to performance marketing, we provide digital solutions designed around your business goals.
+            <p className="text-sm sm:text-base text-[#526175] leading-relaxed">
+              We connect digital marketing, websites, and technology around your priorities to help your business make progress.
             </p>
           </div>
 
@@ -298,28 +238,25 @@ export default function HomePage({ setCurrentRoute, onOpenRegister }) {
             {whatWeDoCards.map((card) => (
               <div 
                 key={card.id}
-                className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200 hover:border-[#005A9C]/50 shadow-sm hover:shadow-xl transition-all duration-300 group hover:-translate-y-1.5 flex flex-col justify-between"
+                className="p-6 sm:p-7 rounded-3xl bg-white border border-[#E3DFD5] hover:border-[#1554B8]/40 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-[#E1EEF8] border border-[#C2DCF1] flex items-center justify-center text-[#005A9C] mb-5 group-hover:scale-110 group-hover:bg-[#005A9C] group-hover:text-white transition">
-                    {card.id === 'lead-generation' && <Target className="w-6 h-6" />}
-                    {card.id === 'quality-leads' && <CheckCircle2 className="w-6 h-6" />}
-                    {card.id === 'analytics' && <BarChart3 className="w-6 h-6" />}
-                    {card.id === 'support' && <Headphones className="w-6 h-6" />}
+                  <div className="w-12 h-12 rounded-2xl bg-[#EAF1FC] border border-[#D5E4F9] flex items-center justify-center mb-5">
+                    {getServiceIcon(card.id)}
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#005A9C] transition">
+                  <h3 className="text-lg font-bold text-[#14243B] mb-2 leading-snug">
                     {card.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-[#526175] leading-relaxed mb-6">
                     {card.description}
                   </p>
 
                   <ul className="space-y-2 mb-6">
                     {card.features.map((feat, fIdx) => (
-                      <li key={fIdx} className="text-xs text-slate-600 flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#005A9C] shrink-0" />
+                      <li key={fIdx} className="text-xs text-[#526175] flex items-center gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1554B8] shrink-0" />
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -327,14 +264,11 @@ export default function HomePage({ setCurrentRoute, onOpenRegister }) {
                 </div>
 
                 <button
-                  onClick={() => {
-                    setCurrentRoute('/services');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  className="text-xs font-bold text-[#005A9C] hover:text-[#004A82] flex items-center gap-1.5 transition pt-4 border-t border-slate-100 group-hover:border-slate-200"
+                  onClick={() => nav('/services')}
+                  className="text-xs font-bold text-[#1554B8] hover:text-[#104396] flex items-center gap-1.5 transition pt-4 border-t border-[#E3DFD5]"
                 >
-                  <span>Learn More</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition" />
+                  <span>Explore Service</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             ))}
@@ -343,30 +277,30 @@ export default function HomePage({ setCurrentRoute, onOpenRegister }) {
         </div>
       </section>
 
-      {/* WHY VENTURERISE SECTION */}
-      <section className="py-20 bg-white border-y border-slate-200/80 relative">
+      {/* 4. WHY VENTURERISE */}
+      <section className="py-20 bg-white border-y border-[#E3DFD5] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#005A9C]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#1554B8]">
                 WHY VENTURERISE
               </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
-                Digital Marketing Built Around Growth.
+              <h2 className="text-3xl sm:text-4xl font-black text-[#14243B] tracking-tight leading-tight">
+                {whyVenturerise.heading}
               </h2>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                We combine strategy, creativity and data to help businesses build a stronger digital presence and create meaningful opportunities online.
+              <p className="text-sm sm:text-base text-[#526175] leading-relaxed">
+                {whyVenturerise.description}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-                {whyChooseUsFeatures.map((feat, idx) => (
-                  <div key={idx} className="p-4 rounded-2xl bg-[#F8F9FA] border border-slate-200">
-                    <h4 className="text-sm font-bold text-slate-900 mb-1.5 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#005A9C]"></span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                {whyVenturerise.cards.map((feat, idx) => (
+                  <div key={idx} className="p-4 rounded-2xl bg-[#F7F4EC] border border-[#E3DFD5]">
+                    <h4 className="text-sm font-bold text-[#14243B] mb-1 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#1554B8]"></span>
                       {feat.title}
                     </h4>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="text-xs text-[#526175] leading-relaxed">
                       {feat.description}
                     </p>
                   </div>
@@ -375,48 +309,43 @@ export default function HomePage({ setCurrentRoute, onOpenRegister }) {
 
               <div className="pt-2">
                 <button
-                  onClick={() => {
-                    setCurrentRoute('/about');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  className="px-6 py-3 rounded-full text-xs font-bold text-white bg-[#005A9C] hover:bg-[#004A82] transition shadow-md shadow-[#005A9C]/25 flex items-center gap-2"
+                  onClick={() => nav('/about')}
+                  className="px-6 py-3 rounded-full text-xs font-bold text-white bg-[#1554B8] hover:bg-[#104396] transition shadow-sm flex items-center gap-2"
                 >
-                  <span>Why Choose Us</span>
+                  <span>Learn About Us</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </div>
 
-            {/* Right illustration: DR+ Growth Card in Sapphire & Off-white */}
+            {/* Right container: Practical Partner Showcase */}
             <div className="lg:col-span-6">
-              <div className="relative rounded-3xl bg-gradient-to-br from-[#F8F9FA] to-white border border-slate-200 p-8 shadow-xl">
-                <div className="w-16 h-16 rounded-2xl bg-[#005A9C] text-white flex items-center justify-center font-black text-3xl shadow-lg shadow-[#005A9C]/30 mb-6">
-                  DR+
+              <div className="rounded-3xl bg-[#F7F4EC] border border-[#E3DFD5] p-8 shadow-sm">
+                <div className="w-14 h-14 rounded-2xl bg-[#1554B8] text-white flex items-center justify-center font-extrabold text-xl mb-6 shadow-sm">
+                  vr
                 </div>
-                <h3 className="text-2xl font-black text-slate-900 mb-2">
-                  Built Around Growth
+                <h3 className="text-2xl font-black text-[#14243B] mb-2">
+                  Built Around Your Real Work
                 </h3>
-                <p className="text-sm text-slate-600 mb-6">
-                  Strategy • Creativity • Performance
+                <p className="text-sm text-[#526175] mb-6">
+                  Marketing • Websites • AI Automation • Tech Solutions
                 </p>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                    <span className="text-xs text-slate-500 font-semibold block">Client Growth</span>
-                    <span className="text-2xl font-black text-emerald-600">+84%</span>
-                    <span className="text-[10px] text-slate-400 block mt-0.5">Average qualified pipeline</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-4 rounded-2xl bg-white border border-[#E3DFD5]">
+                    <span className="text-xs text-[#1554B8] font-bold block">Plain English</span>
+                    <p className="text-xs text-[#526175] mt-1">Clear explanations without confusing jargon or buzzwords.</p>
                   </div>
-                  <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                    <span className="text-xs text-slate-500 font-semibold block">Omnichannel</span>
-                    <span className="text-2xl font-black text-[#005A9C]">360°</span>
-                    <span className="text-[10px] text-slate-400 block mt-0.5">Full funnel execution</span>
+                  <div className="p-4 rounded-2xl bg-white border border-[#E3DFD5]">
+                    <span className="text-xs text-[#1554B8] font-bold block">Sensible Budgets</span>
+                    <p className="text-xs text-[#526175] mt-1">Practical scopes tailored to small business resources.</p>
                   </div>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-slate-200 flex items-center justify-between text-xs text-slate-600">
-                  <span>Targeted Lead Delivery Across India</span>
-                  <span className="text-slate-900 font-semibold flex items-center gap-1">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600" /> Verified Leads
+                <div className="mt-6 pt-5 border-t border-[#E3DFD5] flex items-center justify-between text-xs text-[#526175]">
+                  <span>Serving Small Businesses Across India</span>
+                  <span className="text-[#14243B] font-semibold flex items-center gap-1">
+                    <ShieldCheck className="w-4 h-4 text-[#1554B8]" /> Practical Delivery
                   </span>
                 </div>
               </div>
@@ -426,41 +355,38 @@ export default function HomePage({ setCurrentRoute, onOpenRegister }) {
         </div>
       </section>
 
-      {/* HOW IT WORKS SECTION PREVIEW */}
-      <section className="py-20 lg:py-28 relative bg-[#F8F9FA]">
+      {/* 5. PROCESS PREVIEW (4 STEPS) */}
+      <section className="py-20 lg:py-24 relative bg-[#F7F4EC]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#005A9C]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#1554B8]">
               HOW IT WORKS
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-              Simple Process. Focused Results.
+            <h2 className="text-3xl sm:text-4xl font-black text-[#14243B] tracking-tight">
+              A Clear, Step-by-Step Process.
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              We keep the process simple so you can focus on your business while we focus on your digital growth.
+            <p className="text-sm sm:text-base text-[#526175] leading-relaxed">
+              We keep the work structured and transparent from the initial conversation to launch and review.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {processSteps.slice(0, 4).map((step, idx) => (
-              <div key={idx} className="p-6 rounded-3xl bg-white border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition relative">
-                <span className="text-4xl font-black text-[#005A9C]/20 block mb-3 font-mono">
-                  {step.step}
-                </span>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                  {step.description}
-                </p>
-                <div className="text-[11px] text-slate-500 space-y-1">
-                  {step.items.slice(0, 3).map((item, iIdx) => (
-                    <div key={iIdx} className="flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-[#005A9C]"></span>
-                      <span>{item}</span>
-                    </div>
-                  ))}
+            {processStepsSummary.map((step, idx) => (
+              <div 
+                key={idx} 
+                className="p-6 rounded-3xl bg-white border border-[#E3DFD5] shadow-xs flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-3xl font-black text-[#1554B8]/30 block mb-3 font-mono">
+                    {step.step}
+                  </span>
+                  <h3 className="text-lg font-bold text-[#14243B] mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs text-[#526175] leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -468,13 +394,10 @@ export default function HomePage({ setCurrentRoute, onOpenRegister }) {
 
           <div className="text-center mt-12">
             <button
-              onClick={() => {
-                setCurrentRoute('/how-it-works');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="px-6 py-3 rounded-full text-xs font-bold text-slate-700 hover:text-[#005A9C] bg-white hover:bg-slate-100 border border-slate-300 shadow-sm transition inline-flex items-center gap-2"
+              onClick={() => nav('/how-it-works')}
+              className="px-6 py-3 rounded-full text-xs font-bold text-[#14243B] hover:text-[#1554B8] bg-white hover:bg-[#EAF1FC]/40 border border-[#E3DFD5] shadow-xs transition inline-flex items-center gap-2"
             >
-              <span>See Full Workflow & FAQs</span>
+              <span>See Full 6-Step Process & FAQs</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
@@ -482,66 +405,69 @@ export default function HomePage({ setCurrentRoute, onOpenRegister }) {
         </div>
       </section>
 
-      {/* INTERACTIVE LEAD ESTIMATOR TEASER */}
-      <section className="py-16 bg-gradient-to-r from-[#E1EEF8]/60 via-white to-[#E1EEF8]/60 border-y border-[#C2DCF1]">
+      {/* 6. CONSULTATION SECTION */}
+      <section className="py-16 bg-white border-y border-[#E3DFD5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="space-y-2 text-center lg:text-left">
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#005A9C] uppercase tracking-wider">
-                <Sparkles className="w-4 h-4" /> Free Growth Estimate
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1554B8] uppercase tracking-wider">
+                <HelpCircle className="w-4 h-4" /> Consultation
               </span>
-              <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
-                How Many Leads Can You Generate This Month?
+              <h3 className="text-2xl sm:text-3xl font-black text-[#14243B]">
+                Not Sure Where to Start?
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 max-w-xl">
-                Connect with our performance marketing strategists to get a customized growth blueprint tailored to your business.
+              <p className="text-xs sm:text-sm text-[#526175] max-w-xl">
+                Tell us what you want to improve—your online presence, customer enquiries, or everyday operations. We’ll help you identify a practical next step.
               </p>
             </div>
 
             <button
               onClick={() => nav('/contact')}
-              className="px-8 py-4 rounded-full text-sm font-black text-white bg-[#005A9C] hover:bg-[#004A82] shadow-xl shadow-[#005A9C]/30 transition transform hover:scale-105 shrink-0 flex items-center gap-2"
+              className="px-8 py-4 rounded-full text-sm font-bold text-white bg-[#1554B8] hover:bg-[#104396] shadow-sm transition transform hover:-translate-y-0.5 shrink-0 flex items-center gap-2"
             >
-              <span>Get Free Strategy Call</span>
-              <Sparkles className="w-4 h-4" />
+              <span>Discuss Your Goals</span>
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
       </section>
 
-      {/* CLIENT TESTIMONIALS */}
-      <section className="py-20 lg:py-28 bg-white border-b border-slate-200/80">
+      {/* 7. HOW WE CAN HELP YOUR BUSINESS (EXAMPLES REPLACING FAKE TESTIMONIALS) */}
+      <section className="py-20 lg:py-24 bg-[#F7F4EC] border-b border-[#E3DFD5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#005A9C]">
-              SUCCESS STORIES
+            <span className="text-xs font-bold uppercase tracking-wider text-[#1554B8]">
+              PRACTICAL APPLICATIONS
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-              Trusted by Ambitious Brands Across India.
+            <h2 className="text-3xl sm:text-4xl font-black text-[#14243B] tracking-tight">
+              How We Can Help Your Business.
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Read how businesses scaled their revenue and customer acquisition with VentureRise campaigns.
+            <p className="text-sm sm:text-base text-[#526175] leading-relaxed">
+              Common ways small businesses connect marketing, websites, and technology to simplify work and reach customers.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((item, idx) => (
-              <div key={idx} className="p-6 sm:p-7 rounded-3xl bg-[#F8F9FA] border border-slate-200 flex flex-col justify-between shadow-sm">
+            {howWeHelpExamples.map((item, idx) => (
+              <div 
+                key={idx} 
+                className="p-6 sm:p-7 rounded-3xl bg-white border border-[#E3DFD5] flex flex-col justify-between shadow-xs"
+              >
                 <div>
-                  <div className="flex items-center gap-1 text-amber-500 mb-4">
-                    {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-500" />
-                    ))}
-                  </div>
-                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic mb-6">
-                    "{item.quote}"
+                  <span className="text-[11px] font-bold text-[#1554B8] uppercase tracking-wider block mb-2">
+                    {item.category}
+                  </span>
+                  <h3 className="text-lg font-bold text-[#14243B] mb-3 leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#526175] leading-relaxed">
+                    {item.description}
                   </p>
                 </div>
-                <div className="pt-4 border-t border-slate-200">
-                  <p className="text-sm font-bold text-slate-900">{item.name}</p>
-                  <p className="text-xs text-[#005A9C] font-semibold">{item.role}</p>
-                  <p className="text-[11px] text-slate-500 mt-0.5">{item.location}, India</p>
+                <div className="pt-6 mt-6 border-t border-[#E3DFD5] flex items-center justify-between text-xs font-semibold text-[#1554B8]">
+                  <span>Explore this approach</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </div>
               </div>
             ))}
@@ -550,48 +476,42 @@ export default function HomePage({ setCurrentRoute, onOpenRegister }) {
         </div>
       </section>
 
-      {/* READY TO GROW BOTTOM CTA BANNER */}
-      <section className="py-20 bg-[#F8F9FA] text-center space-y-6">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
-            Ready to Grow Your Business?
+      {/* 8. CLOSING CTA */}
+      <section className="py-20 bg-white text-center space-y-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#14243B] tracking-tight">
+            Let’s Build Your Business’s Next Step.
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Let's create a digital strategy that brings your business more visibility, better opportunities and sustainable growth.
+          <p className="text-sm sm:text-base text-[#526175] max-w-2xl mx-auto leading-relaxed">
+            A stronger website, more focused marketing, or simpler workflows—start with what matters most to your business.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <button
-              onClick={() => {
-                setCurrentRoute('/contact');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="px-8 py-4 rounded-full text-sm font-black text-white bg-[#005A9C] hover:bg-[#004A82] shadow-xl shadow-[#005A9C]/30 transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2"
+              onClick={() => nav('/contact')}
+              className="px-8 py-4 rounded-full text-sm font-bold text-white bg-[#1554B8] hover:bg-[#104396] shadow-sm transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2"
             >
-              <span>Start Growing</span>
+              <span>Discuss Your Project</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 
             <button
-              onClick={() => {
-                setCurrentRoute('/services');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="px-8 py-4 rounded-full text-sm font-bold text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-100 border border-slate-300 shadow-sm transition"
+              onClick={() => nav('/services')}
+              className="px-8 py-4 rounded-full text-sm font-bold text-[#14243B] hover:text-[#1554B8] bg-[#F7F4EC] hover:bg-[#EAF1FC]/50 border border-[#E3DFD5] shadow-xs transition"
             >
               Explore Services
             </button>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-8 text-xs text-slate-600">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-8 text-xs text-[#526175]">
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Free Growth Strategy Call
+              <CheckCircle2 className="w-4 h-4 text-[#1554B8]" /> Plain language explanations
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" /> High Closing Ratio Leads
+              <CheckCircle2 className="w-4 h-4 text-[#1554B8]" /> Practical project scope
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Instant WhatsApp Alerts
+              <CheckCircle2 className="w-4 h-4 text-[#1554B8]" /> Direct communication
             </span>
           </div>
         </div>

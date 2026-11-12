@@ -1,115 +1,93 @@
-# DIGITAL RISE — Full-Stack Website
+# venturerise — Digital Growth & Technology Partner
 
-A full-stack replica of **Digital Rise India** ([https://www.digitalriseindia.com/](https://www.digitalriseindia.com/)) built using **React (JSX) + Vite + Tailwind CSS** on the frontend and **Node.js + Express** on the backend.
+A modern full-stack web application for **venturerise**, a practical digital growth and technology partner for small businesses. Built using **React (JSX) + Vite + Tailwind CSS** on the frontend and **Node.js + Express** on the backend.
 
 ---
 
-## 🚀 Features & Pages Included
+## 🎨 Branding & Color Palette
+
+* **Brand Wordmark**: `venturerise`
+* **Tagline**: *"Practical Digital Solutions. Built Around You."*
+* **Primary Blue**: `#1554B8`
+* **Off-White Background**: `#F7F4EC`
+* **Dark Navy Headings**: `#14243B`
+* **Body Text**: `#526175`
+* **Pale Blue Accents**: `#EAF1FC`
+* **Border Accents**: `#E3DFD5` / `#D5E4F9`
+
+---
+
+## 🚀 Pages & Structure
 
 ### 1. **Pages (`src/pages/`)**
 * **Home (`/`)**:
-  * Top bar with live contact coordinates and operating hours (`Mon - Sat 10:00 AM - 7:00 PM`).
-  * Hero section with dynamic 3-slide auto-rotating carousel, interactive controls, and CTA buttons.
-  * Real-time campaign performance mockup dashboard (Total Leads 28,540, Qualified Leads 12,820, Conversion Rate 45.8%, Lead Growth +24.8%).
-  * Statistics counter bar (10,000+ Active Users, 500+ Businesses, 1M+ Leads Generated, 100% Growth Focused).
-  * "WHAT WE DO" 4-card solutions grid with feature tags and "Learn More" navigation.
-  * "WHY DIGITAL RISE" value proposition & DR+ 360° growth card (+84% growth).
-  * "HOW IT WORKS" 4-step workflow preview.
-  * Interactive Lead Estimator teaser.
-  * 5-star verified client testimonials from Bhopal, Indore, and Pune.
-  * Ready to Grow bottom CTA banner.
+  * Top bar with contact info (`venturerise@gmail.com`, `+91 8780788923`, `Ahmedabad, Gujarat`).
+  * Hero: *"Build Your Presence. Grow Your Reach. Simplify Your Work."*
+  * Connected Digital Solutions card showing Attract Customers, Capture Enquiries, and Simplify Follow-ups with an illustrative workflow diagram.
+  * Factual capability cards: Digital Marketing, Website Development, AI Automation, Tech Integrations.
+  * 4 core service cards with clear business benefit descriptions.
+  * "Why venturerise" section highlighting Business-First Approach, Connected Services, Clear Communication, and Room to Grow.
+  * 4-step process summary (Discover, Plan, Build & Launch, Review & Improve).
+  * Consultation teaser: *"Not Sure Where to Start?"*
+  * *"How We Can Help Your Business"* practical service application examples.
+  * Closing CTA banner with primary and secondary navigation actions.
 * **About Us (`/about`)**:
-  * Hero: *"Behind Every Lead Is A Strategy."*
-  * Who We Are & 4 pillars: Strategy Driven, Performance Focused, Transparent Process, Long-Term Growth.
-  * What Drives Us: Mission & Vision statement cards.
-  * Our Process: Discover, Strategize, Execute, Measure.
+  * Hero: *"Your Ambition. Our Digital Expertise."*
+  * Introduction: *"A Digital Partner for Your Next Step."*
+  * Mission & Vision statements.
+  * 4 business values: Practical Thinking, Clear Communication, Thoughtful Execution, Ongoing Improvement.
+  * Factual capability cards.
+  * 4-step process overview.
 * **Services (`/services`)**:
-  * Hero: *"Digital Solutions Built to Grow."*
-  * 6 comprehensive service breakdowns:
-    1. SEO & Organic Growth
-    2. Performance Marketing (Google & Meta Ads)
-    3. Social Media Marketing
-    4. Website Development
-    5. Lead Generation & Funnels
-    6. Branding & Creative
-  * 4-step execution framework.
-  * 4 transparent pricing & plan tiers:
-    * **Trial**: ₹4,999 (Starter pack)
-    * **Basic**: ₹11,999 (Most Popular)
-    * **Gold**: ₹19,999 (High Growth)
-    * **Premium**: ₹24,999 (Enterprise)
+  * Hero: *"Practical Digital Solutions Built Around Your Business."*
+  * 6 core service categories:
+    1. **SEO & Local Visibility** (On-Page SEO, Technical Improvements, Local Search, Keyword Planning)
+    2. **Paid Marketing & Lead Generation** (Campaign Planning, Audience Targeting, Enquiry Forms, Performance Review)
+    3. **Social Media & Content** (Content Planning, Social Creatives, Business Messaging, Channel Management)
+    4. **Website Design & Development** (Business Websites, Landing Pages, Responsive Design, Form Integration)
+    5. **AI Automation** (Enquiry Routing, Follow-up Workflows, AI-Assisted FAQs, Task Automation)
+    6. **Tech Solutions & Integrations** (CRM Setup, Tool Connections, Data Workflows, Technical Improvements)
+  * 4-step "How We Help" execution roadmap.
+  * 4 transparent pricing tiers (Trial ₹4,999, Basic ₹11,999, Gold ₹19,999, Premium ₹24,999) with realistic scopes (amounts pending owner review).
+  * Custom proposal CTA.
 * **How It Works (`/how-it-works`)**:
-  * Hero: *"How We Turn Ideas Into Growth."*
-  * Approach: Simple Process. Serious Results.
-  * 6 detailed roadmap steps (Discover, Strategize, Create, Launch, Measure, Scale).
-  * Interactive expandable FAQ accordion with all 6 answers.
-* **Campaigns (`/campaigns`)**:
-  * Performance metrics (50+ Live Campaigns, 10K+ Leads, 3.8x ROI, 95% Retention).
-  * Filterable case studies by industry (Real Estate, Education, Healthcare, B2B SaaS, E-Commerce, Finance).
+  * Hero: *"A Clear Process. A Practical Way Forward."*
+  * 6 detailed roadmap steps:
+    1. **Discover** — Understand your business, audience, existing tools, and priorities.
+    2. **Strategize** — Agree on the scope and plan the right combination of marketing, website work, or automation.
+    3. **Create** — Build the agreed content, website elements, campaigns, or connected workflows.
+    4. **Launch** — Test the work, check key journeys, and launch the solution.
+    5. **Measure** — Review relevant information such as enquiries, website activity, campaign performance, or workflow reliability.
+    6. **Improve & Grow** — Use what we learn to refine the solution and plan sensible next steps.
+  * Expandable FAQ accordion addressing timelines, small business suitability, individual service options, post-launch arrangements, scope definition, and tool improvements.
 * **Contact Us (`/contact`)**:
-  * 4 Contact info cards (Email: `venturerise@gmail.com`, Phone: `+91 8780788923`, Location: `Bhopal, Madhya Pradesh`, Hours: `Mon – Sat, 10 AM – 7 PM`).
-  * Free consultation & audit guarantees.
-  * Interactive contact form with validation, Express backend API submission (`/api/contact`), and direct WhatsApp message dispatch.
-* **Legal & Support (`/faq`, `/privacy-policy`, `/terms-and-conditions`, `/refund-policy`)**:
-  * Full privacy policy, client terms, cancellation & refund conditions, and knowledge base.
+  * Hero: *"Tell Us What’s Next for Your Business."*
+  * 4 contact coordinates cards: Email, Direct Call, WhatsApp conversation, Location (Ahmedabad, Gujarat).
+  * Inquiry form with backend API submission (`/api/contact`), validation, and optional direct WhatsApp continuation.
+  * Benefits of partnering with venturerise.
+* **Legal Pages (`/privacy-policy`, `/terms-and-conditions`, `/refund-policy`, `/faq`)**:
+  * Client agreements, data protection policy, transparent refund policy, and knowledge base.
 
 ---
 
-### 2. **Interactive Widgets & Modals (`src/components/`)**
-* **Khushbu Patel Live Chatbot (`ChatWidget.jsx`)**:
-  * Red floating action button at bottom-right (`fixed bottom-5 right-5 z-[999]`).
-  * Agent profile: Khushbu Patel with active green online indicator.
-  * Multi-branch automated flow:
-    * 💰 Plans & Pricing: Trial (₹4,999), Basic (₹11,999), Gold (₹19,999), Premium (₹24,999) with in-chat lead capture form sending direct inquiries to WhatsApp.
-    * 🚀 Lead Generation: Options for More Leads, FB/Insta Ads, Google Ads, or Talk to Expert.
-    * 🛠️ Services, ⚙️ How It Works, 📞 Direct Call / WhatsApp / Email.
-* **Lead ROI Calculator Modal (`LeadCalculatorModal.jsx`)**:
-  * Interactive budget slider (₹5,000 to ₹2,00,000) and industry selector.
-  * Computes projected inquiries, qualified leads, estimated reach, and recommended tier.
-* **Fast-Track Register Modal (`RegisterModal.jsx`)**:
-  * Express onboarding registration with WhatsApp verification.
+## 🛠️ Tech Stack & Architecture
+
+* **Frontend**: React 18, Tailwind CSS, Lucide React, Vite.
+* **Backend**: Node.js, Express REST API, Static SPA File Server.
+* **Routing**: HTML5 History API client routing with SPA server-side fallback and 301 redirect for `/campaigns` -> `/services`.
 
 ---
 
-### 3. **Backend API (`server/index.js`)**
-* `GET /api/health` — Service health check
-* `GET /api/stats` — Platform statistics
-* `POST /api/contact` — Lead capture & inquiry submission
-* `POST /api/subscribe` — Newsletter subscription
-* `POST /api/chat-enquiry` — Chatbot lead intake
-* `POST /api/lead-estimate` — Instant CPL / lead calculation
-* Production static file serving with Single Page Application fallback for all routes.
+## ⚙️ Running the Project
 
----
-
-## 🛠️ How to Run
-
-### Quick Start:
+### Production Mode (recommended)
 ```bash
-# Production Mode (Builds if needed and runs on http://localhost:5050)
 ./start.sh
+```
+Builds fresh production assets into `./dist` and launches the Node.js Express server on `http://localhost:5050`.
 
-# Development Mode (Vite on :5173 + Express on :5050 with live reload)
+### Development Mode (live reloading)
+```bash
 ./start.sh --dev
 ```
-
-### Manual Commands:
-```bash
-# Terminal 1: Run frontend with Vite
-npm run dev
-
-# Terminal 2: Run backend API with Express
-npm run server
-```
-Frontend runs at: `http://localhost:5173`
-Backend runs at: `http://localhost:5050`
-
-### Production Build & Serve:
-```bash
-# 1. Build optimized React assets
-npm run build
-
-# 2. Start full-stack server
-npm run start
-```
-Full application will be served at: `http://localhost:5050`
+Concurrently runs Vite on `http://localhost:5173` with backend API proxying to `http://localhost:5050`.

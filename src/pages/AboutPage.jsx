@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowRight, ArrowUpRight, CheckCircle2, Target, ShieldCheck, TrendingUp, Users, Award, MapPin } from 'lucide-react';
-import { siteConfig, statsData, processSteps } from '../data/websiteData';
+import { ArrowRight, CheckCircle2, ShieldCheck, Target, Globe, Sparkles, Layers } from 'lucide-react';
+import { siteConfig, factualCapabilities, processStepsSummary } from '../data/websiteData';
 
 export default function AboutPage({ setCurrentRoute }) {
   const nav = (route) => {
@@ -9,81 +9,77 @@ export default function AboutPage({ setCurrentRoute }) {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] text-[#0F172A]">
+    <div className="min-h-screen bg-[#F7F4EC] text-[#526175]">
       
       {/* HERO SECTION */}
-      <section className="relative pt-12 pb-20 border-b border-slate-200/80 bg-white overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[300px] bg-[#005A9C]/10 rounded-full blur-[140px] pointer-events-none"></div>
-
+      <section className="relative pt-12 pb-20 border-b border-[#E3DFD5] bg-[#F7F4EC] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E1EEF8] border border-[#C2DCF1] text-[#005A9C] text-xs font-bold uppercase tracking-widest shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-[#005A9C]"></span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF1FC] border border-[#D5E4F9] text-[#1554B8] text-xs font-bold uppercase tracking-wider shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-[#1554B8]"></span>
                 <span>ABOUT VENTURERISE</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
-                Behind Every Lead <br />
-                <span className="bg-gradient-to-r from-[#005A9C] via-[#0284C7] to-[#004A82] bg-clip-text text-transparent">
-                  Is A Strategy.
-                </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#14243B] tracking-tight leading-[1.15]">
+                Your Ambition. <br />
+                <span className="text-[#1554B8]">Our Digital Expertise.</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
-                VENTURERISE is a performance-driven digital agency helping businesses attract the right audience, generate quality leads and build sustainable digital growth.
+              <p className="text-base sm:text-lg text-[#526175] max-w-xl leading-relaxed">
+                venturerise helps small businesses build their online presence, reach relevant customers, and simplify everyday work through marketing, websites, and technology.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <button
                   onClick={() => nav('/contact')}
-                  className="px-7 py-3.5 rounded-full text-sm font-bold text-white bg-[#005A9C] hover:bg-[#004A82] shadow-md shadow-[#005A9C]/30 transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2"
+                  className="px-7 py-3.5 rounded-full text-sm font-bold text-white bg-[#1554B8] hover:bg-[#104396] shadow-sm transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2"
                 >
-                  <span>Let's Grow Together</span>
+                  <span>Discuss Your Project</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
 
                 <button
                   onClick={() => nav('/services')}
-                  className="px-7 py-3.5 rounded-full text-sm font-bold text-slate-700 hover:text-[#005A9C] bg-slate-100 hover:bg-[#E1EEF8] border border-slate-200 transition"
+                  className="px-7 py-3.5 rounded-full text-sm font-bold text-[#14243B] hover:text-[#1554B8] bg-white hover:bg-[#EAF1FC]/40 border border-[#E3DFD5] shadow-xs transition"
                 >
                   Explore Services
                 </button>
               </div>
             </div>
 
-            {/* DR+ Hero Card */}
+            {/* Right Card: Practical Partner Container */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-3xl bg-[#F8F9FA] border border-slate-200 p-8 shadow-xl">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#005A9C] to-[#0284C7] text-white flex items-center justify-center font-black text-3xl shadow-lg shadow-[#005A9C]/30 mb-6">
-                  DR+
+              <div className="relative rounded-3xl bg-white border border-[#E3DFD5] p-8 shadow-xs">
+                <div className="w-14 h-14 rounded-2xl bg-[#1554B8] text-white flex items-center justify-center font-extrabold text-xl shadow-xs mb-6">
+                  vr
                 </div>
-                <h3 className="text-2xl font-black text-slate-900 mb-1">
-                  Built Around Growth
+                <h3 className="text-2xl font-black text-[#14243B] mb-1">
+                  Practical Digital Partner
                 </h3>
-                <p className="text-sm font-semibold text-[#005A9C] mb-6">
-                  Strategy • Creativity • Performance
+                <p className="text-sm font-semibold text-[#1554B8] mb-6">
+                  Marketing • Websites • AI Automation • Tech
                 </p>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                    <span className="text-xs text-slate-500 font-semibold block">Client Growth</span>
-                    <span className="text-3xl font-black text-emerald-600">+84%</span>
-                    <span className="text-[10px] text-slate-400 block mt-1">Average ROI improvement</span>
+                  <div className="p-4 rounded-2xl bg-[#F7F4EC] border border-[#E3DFD5]">
+                    <span className="text-xs text-[#526175] font-semibold block">Focus</span>
+                    <span className="text-xl font-black text-[#14243B] mt-1 block">Small Business</span>
+                    <span className="text-[11px] text-[#526175] block mt-0.5">Practical, achievable scopes</span>
                   </div>
-                  <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                    <span className="text-xs text-slate-500 font-semibold block">360° Scope</span>
-                    <span className="text-3xl font-black text-[#005A9C]">Digital</span>
-                    <span className="text-[10px] text-slate-400 block mt-1">Full-funnel digital growth</span>
+                  <div className="p-4 rounded-2xl bg-[#F7F4EC] border border-[#E3DFD5]">
+                    <span className="text-xs text-[#526175] font-semibold block">Approach</span>
+                    <span className="text-xl font-black text-[#1554B8] mt-1 block">Connected</span>
+                    <span className="text-[11px] text-[#526175] block mt-0.5">Tools working together</span>
                   </div>
                 </div>
 
-                <div className="mt-6 pt-5 border-t border-slate-200 flex items-center justify-between text-xs text-slate-600">
-                  <span className="flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-[#005A9C]" /> Ahmedabad, Gujarat
+                <div className="mt-6 pt-5 border-t border-[#E3DFD5] flex items-center justify-between text-xs text-[#526175]">
+                  <span>Plain language communication</span>
+                  <span className="text-[#14243B] font-semibold flex items-center gap-1">
+                    <ShieldCheck className="w-4 h-4 text-[#1554B8]" /> Honest Scope
                   </span>
-                  <span className="text-slate-800 font-semibold">Serving Pan-India</span>
                 </div>
               </div>
             </div>
@@ -92,60 +88,65 @@ export default function AboutPage({ setCurrentRoute }) {
         </div>
       </section>
 
-      {/* WHO WE ARE SECTION */}
-      <section className="py-20 lg:py-24 border-b border-slate-200/80 bg-[#F8F9FA]">
+      {/* INTRODUCTION SECTION */}
+      <section className="py-20 lg:py-24 border-b border-[#E3DFD5] bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-6 space-y-5">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#005A9C]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#1554B8]">
                 WHO WE ARE
               </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
-                More Than An Agency. <br />
-                <span className="text-[#005A9C]">Your Growth Partner.</span>
+              <h2 className="text-3xl sm:text-4xl font-black text-[#14243B] tracking-tight leading-tight">
+                A Digital Partner for Your Next Step.
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                At VENTURERISE, we believe digital marketing should do more than create visibility — it should create opportunities.
+              <p className="text-sm sm:text-base text-[#526175] leading-relaxed">
+                Running a small business means balancing many priorities. Your digital tools should make that work easier.
               </p>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                We bring together strategy, creativity, technology and data to help businesses build stronger digital experiences and generate meaningful results.
+              <p className="text-sm sm:text-base text-[#526175] leading-relaxed">
+                At venturerise, we connect digital marketing, website development, AI automation, and practical tech solutions around your business needs.
               </p>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                From reaching the right audience to converting attention into action, we focus on every important step of your digital growth journey.
+              <p className="text-sm sm:text-base text-[#526175] leading-relaxed">
+                We start by understanding what you want to achieve, then help you choose a clear and manageable way forward.
               </p>
 
+              {/* 4 Values Cards */}
               <div className="grid grid-cols-2 gap-3 pt-3">
-                <div className="flex items-center gap-2 text-xs font-bold text-slate-800 bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
-                  <CheckCircle2 className="w-4 h-4 text-[#005A9C] shrink-0" />
-                  <span>Strategy Driven</span>
+                <div className="flex items-center gap-2 text-xs font-bold text-[#14243B] bg-[#F7F4EC] p-3.5 rounded-xl border border-[#E3DFD5]">
+                  <CheckCircle2 className="w-4 h-4 text-[#1554B8] shrink-0" />
+                  <span>Practical Thinking</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-bold text-slate-800 bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
-                  <CheckCircle2 className="w-4 h-4 text-[#005A9C] shrink-0" />
-                  <span>Performance Focused</span>
+                <div className="flex items-center gap-2 text-xs font-bold text-[#14243B] bg-[#F7F4EC] p-3.5 rounded-xl border border-[#E3DFD5]">
+                  <CheckCircle2 className="w-4 h-4 text-[#1554B8] shrink-0" />
+                  <span>Clear Communication</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-bold text-slate-800 bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
-                  <CheckCircle2 className="w-4 h-4 text-[#005A9C] shrink-0" />
-                  <span>Transparent Process</span>
+                <div className="flex items-center gap-2 text-xs font-bold text-[#14243B] bg-[#F7F4EC] p-3.5 rounded-xl border border-[#E3DFD5]">
+                  <CheckCircle2 className="w-4 h-4 text-[#1554B8] shrink-0" />
+                  <span>Thoughtful Execution</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-bold text-slate-800 bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
-                  <CheckCircle2 className="w-4 h-4 text-[#005A9C] shrink-0" />
-                  <span>Long-Term Growth</span>
+                <div className="flex items-center gap-2 text-xs font-bold text-[#14243B] bg-[#F7F4EC] p-3.5 rounded-xl border border-[#E3DFD5]">
+                  <CheckCircle2 className="w-4 h-4 text-[#1554B8] shrink-0" />
+                  <span>Ongoing Improvement</span>
                 </div>
               </div>
             </div>
 
-            {/* Right side stats matrix */}
+            {/* Right side factual capability matrix (replacing unsupported stats) */}
             <div className="lg:col-span-6">
-              <div className="grid grid-cols-2 gap-5">
-                {statsData.map((stat, i) => (
-                  <div key={i} className="p-6 rounded-3xl bg-white border border-slate-200 text-center hover:border-[#95C2E6] shadow-sm transition">
-                    <p className="text-3xl sm:text-4xl font-black text-slate-900">{stat.value}</p>
-                    <p className="text-sm font-bold text-slate-700 mt-1">{stat.label}</p>
-                    <span className="text-[11px] text-[#005A9C] font-semibold block mt-1">{stat.change}</span>
+              <div className="grid grid-cols-2 gap-4">
+                {factualCapabilities.map((item, i) => (
+                  <div key={i} className="p-6 rounded-3xl bg-[#F7F4EC] border border-[#E3DFD5] text-left">
+                    <div className="w-10 h-10 rounded-xl bg-[#EAF1FC] border border-[#D5E4F9] flex items-center justify-center text-[#1554B8] mb-3">
+                      {item.icon === 'Target' && <Target className="w-5 h-5" />}
+                      {item.icon === 'Globe' && <Globe className="w-5 h-5" />}
+                      {item.icon === 'Sparkles' && <Sparkles className="w-5 h-5" />}
+                      {item.icon === 'Layers' && <Layers className="w-5 h-5" />}
+                    </div>
+                    <h4 className="text-base font-bold text-[#14243B] mb-1">{item.title}</h4>
+                    <p className="text-xs text-[#526175] leading-relaxed">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -155,37 +156,37 @@ export default function AboutPage({ setCurrentRoute }) {
         </div>
       </section>
 
-      {/* WHAT DRIVES US - MISSION & VISION */}
-      <section className="py-20 bg-white border-b border-slate-200/80">
+      {/* MISSION & VISION SECTION */}
+      <section className="py-20 bg-[#F7F4EC] border-b border-[#E3DFD5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#005A9C]">
-              WHAT DRIVES US
+            <span className="text-xs font-bold uppercase tracking-wider text-[#1554B8]">
+              PURPOSE & DIRECTION
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-              Built With Purpose. Driven By Growth.
+            <h2 className="text-3xl sm:text-4xl font-black text-[#14243B] tracking-tight">
+              Mission & Vision
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-8 rounded-3xl bg-[#F8F9FA] border border-slate-200 space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#E1EEF8] text-[#005A9C] border border-[#C2DCF1] flex items-center justify-center font-black text-xl">
+            <div className="p-8 rounded-3xl bg-white border border-[#E3DFD5] space-y-4 shadow-xs">
+              <div className="w-12 h-12 rounded-2xl bg-[#EAF1FC] text-[#1554B8] border border-[#D5E4F9] flex items-center justify-center font-black text-xl">
                 01
               </div>
-              <h3 className="text-2xl font-black text-slate-900">Our Mission</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                To help businesses grow smarter, faster and more sustainably through result-driven digital marketing and transparent lead generation frameworks.
+              <h3 className="text-2xl font-black text-[#14243B]">Our Mission</h3>
+              <p className="text-sm text-[#526175] leading-relaxed">
+                To make useful digital marketing and technology solutions more accessible to small businesses.
               </p>
             </div>
 
-            <div className="p-8 rounded-3xl bg-[#F8F9FA] border border-slate-200 space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#E1EEF8] text-[#005A9C] border border-[#C2DCF1] flex items-center justify-center font-black text-xl">
+            <div className="p-8 rounded-3xl bg-white border border-[#E3DFD5] space-y-4 shadow-xs">
+              <div className="w-12 h-12 rounded-2xl bg-[#EAF1FC] text-[#1554B8] border border-[#D5E4F9] flex items-center justify-center font-black text-xl">
                 02
               </div>
-              <h3 className="text-2xl font-black text-slate-900">Our Vision</h3>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                To become a trusted growth partner for ambitious businesses by combining powerful strategies, creative thinking and measurable performance across India.
+              <h3 className="text-2xl font-black text-[#14243B]">Our Vision</h3>
+              <p className="text-sm text-[#526175] leading-relaxed">
+                To become a trusted partner for small businesses as they build, improve, and grow their digital capabilities.
               </p>
             </div>
           </div>
@@ -193,62 +194,66 @@ export default function AboutPage({ setCurrentRoute }) {
         </div>
       </section>
 
-      {/* OUR PROCESS (4 PHASES) */}
-      <section className="py-20 lg:py-28 border-b border-slate-200/80 bg-[#F8F9FA]">
+      {/* PROCESS SUMMARY (4 PHASES) */}
+      <section className="py-20 lg:py-24 border-b border-[#E3DFD5] bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#005A9C]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#1554B8]">
               OUR PROCESS
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-              How We Turn Ideas Into Growth.
+            <h2 className="text-3xl sm:text-4xl font-black text-[#14243B] tracking-tight">
+              A Structured, Manageable Approach.
             </h2>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              A simple, transparent process designed to turn business goals into practical digital strategies and measurable results.
+            <p className="text-sm text-[#526175] leading-relaxed">
+              We define clear scopes, agree on deliverables, and keep you informed throughout the work.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {processSteps.slice(0, 4).map((step, idx) => (
-              <div key={idx} className="p-6 rounded-3xl bg-white border border-slate-200 hover:border-slate-300 shadow-sm transition">
-                <span className="text-3xl font-black text-[#005A9C]/30 font-mono block mb-2">
+            {processStepsSummary.map((step, idx) => (
+              <div key={idx} className="p-6 rounded-3xl bg-[#F7F4EC] border border-[#E3DFD5] shadow-xs">
+                <span className="text-3xl font-black text-[#1554B8]/30 font-mono block mb-2">
                   {step.step}
                 </span>
-                <h4 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h4>
-                <p className="text-xs text-slate-600 leading-relaxed mb-4">
+                <h4 className="text-lg font-bold text-[#14243B] mb-2">{step.title}</h4>
+                <p className="text-xs text-[#526175] leading-relaxed">
                   {step.description}
                 </p>
-                <div className="text-[11px] text-slate-500 space-y-1">
-                  {step.items.slice(0, 3).map((item, iIdx) => (
-                    <div key={iIdx} className="flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-[#005A9C]"></span>
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
             ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <button
+              onClick={() => nav('/how-it-works')}
+              className="text-xs font-bold text-[#1554B8] hover:underline inline-flex items-center gap-1.5"
+            >
+              <span>Explore full 6-step workflow & FAQs</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
           </div>
 
         </div>
       </section>
 
-      {/* CTA BOTTOM */}
-      <section className="py-16 bg-white text-center space-y-4">
-        <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
-          Ready to Write Your Growth Story?
+      {/* CLOSING CTA */}
+      <section className="py-20 bg-[#F7F4EC] text-center space-y-4">
+        <h3 className="text-2xl sm:text-3xl font-black text-[#14243B]">
+          Let’s Take Your Next Step Together.
         </h3>
-        <p className="text-xs sm:text-sm text-slate-600 max-w-lg mx-auto">
-          Contact our team today to discuss your business requirements and receive a personalized growth proposal.
+        <p className="text-xs sm:text-sm text-[#526175] max-w-lg mx-auto leading-relaxed">
+          Whether you need a new website, help reaching customers, or simpler tools to manage work—we are here to help.
         </p>
-        <button
-          onClick={() => nav('/contact')}
-          className="px-8 py-3.5 rounded-full text-xs font-bold text-white bg-[#005A9C] hover:bg-[#004A82] shadow-md shadow-[#005A9C]/30 transition transform hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center gap-2"
-        >
-          <span>Work With Us</span>
-          <ArrowRight className="w-3.5 h-3.5" />
-        </button>
+        <div className="pt-2">
+          <button
+            onClick={() => nav('/contact')}
+            className="px-8 py-3.5 rounded-full text-xs font-bold text-white bg-[#1554B8] hover:bg-[#104396] shadow-sm transition transform hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center gap-2"
+          >
+            <span>Discuss Your Project</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
       </section>
 
     </div>

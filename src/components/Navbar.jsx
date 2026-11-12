@@ -19,7 +19,6 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister }
     { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'How It Works', path: '/how-it-works' },
-    { name: 'Campaigns', path: '/campaigns' },
     { name: 'Contact Us', path: '/contact' },
   ];
 
@@ -32,8 +31,8 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister }
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-md shadow-slate-900/5' 
-        : 'bg-white border-b border-slate-200/80'
+        ? 'bg-[#F7F4EC]/95 backdrop-blur-md border-b border-[#E3DFD5] shadow-sm' 
+        : 'bg-[#F7F4EC] border-b border-[#E3DFD5]/80'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -42,22 +41,23 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister }
           <button 
             onClick={() => handleNavClick('/')}
             className="flex items-center gap-3 text-left focus:outline-none group"
+            aria-label="venturerise home"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#005A9C] to-[#0284C7] flex items-center justify-center text-white shadow-md shadow-[#005A9C]/30 group-hover:scale-105 transition-transform">
-              <span className="font-extrabold text-xl tracking-tighter">VR</span>
+            <div className="w-10 h-10 rounded-xl bg-[#1554B8] flex items-center justify-center text-white font-extrabold text-base tracking-tighter shadow-sm group-hover:bg-[#104396] transition-colors">
+              vr
             </div>
             <div>
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 flex items-center">
-                VENTURE <span className="text-[#005A9C] ml-1.5 font-extrabold">RISE</span>
+              <span className="text-xl sm:text-2xl font-black tracking-tight text-[#14243B] lowercase font-sans">
+                venturerise
               </span>
-              <span className="block text-[10px] tracking-widest uppercase font-semibold text-slate-500">
-                Growth Partner
+              <span className="block text-[10px] tracking-widest uppercase font-semibold text-[#526175]">
+                Digital & Tech Partner
               </span>
             </div>
           </button>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+          <nav className="hidden md:flex items-center gap-1 lg:gap-1.5">
             {navLinks.map((link) => {
               const isActive = currentRoute === link.path;
               return (
@@ -66,13 +66,13 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister }
                   onClick={() => handleNavClick(link.path)}
                   className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 relative ${
                     isActive 
-                      ? 'text-[#005A9C] bg-[#E1EEF8]/80 font-bold' 
-                      : 'text-slate-600 hover:text-[#005A9C] hover:bg-[#F0F6FB]'
+                      ? 'text-[#1554B8] bg-[#EAF1FC] font-bold' 
+                      : 'text-[#526175] hover:text-[#1554B8] hover:bg-[#EAF1FC]/60'
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-[#005A9C] rounded-full" />
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 bg-[#1554B8] rounded-full" />
                   )}
                 </button>
               );
@@ -83,16 +83,9 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister }
           <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={() => handleNavClick('/contact')}
-              className="px-4 py-2 rounded-full text-xs font-semibold text-slate-700 hover:text-[#005A9C] bg-[#F1F3F5] hover:bg-[#E1EEF8] border border-slate-200 transition flex items-center gap-1.5 shadow-sm"
+              className="px-5 py-2.5 rounded-full text-sm font-bold text-white bg-[#1554B8] hover:bg-[#104396] shadow-sm hover:shadow transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5"
             >
-              Get Free Consultation
-            </button>
-
-            <button
-              onClick={onOpenRegister}
-              className="px-5 py-2.5 rounded-full text-sm font-bold text-white bg-[#005A9C] hover:bg-[#004A82] shadow-md shadow-[#005A9C]/25 hover:shadow-[#005A9C]/40 transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5"
-            >
-              <span>Register Now</span>
+              <span>Discuss Your Project</span>
               <ArrowUpRight className="w-4 h-4" />
             </button>
           </div>
@@ -100,14 +93,14 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister }
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
             <button
-              onClick={onOpenRegister}
-              className="px-3 py-1.5 rounded-full text-xs font-bold text-white bg-[#005A9C] hover:bg-[#004A82]"
+              onClick={() => handleNavClick('/contact')}
+              className="px-3.5 py-1.5 rounded-full text-xs font-bold text-white bg-[#1554B8] hover:bg-[#104396]"
             >
-              Register
+              Discuss Project
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition"
+              className="p-2 rounded-lg text-[#14243B] hover:bg-[#EAF1FC] transition"
               aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -118,7 +111,7 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister }
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-xl">
+        <div className="md:hidden bg-[#F7F4EC] border-b border-[#E3DFD5] px-4 pt-3 pb-6 space-y-3 shadow-lg">
           <div className="grid grid-cols-1 gap-1">
             {navLinks.map((link) => {
               const isActive = currentRoute === link.path;
@@ -128,36 +121,26 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister }
                   onClick={() => handleNavClick(link.path)}
                   className={`text-left px-4 py-3 rounded-xl text-base font-semibold flex items-center justify-between ${
                     isActive 
-                      ? 'bg-[#E1EEF8] text-[#005A9C] font-bold border border-[#C2DCF1]' 
-                      : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900'
+                      ? 'bg-[#EAF1FC] text-[#1554B8] font-bold border border-[#D5E4F9]' 
+                      : 'text-[#526175] hover:bg-[#EAF1FC]/40 hover:text-[#14243B]'
                   }`}
                 >
                   <span>{link.name}</span>
-                  {isActive && <span className="w-2 h-2 rounded-full bg-[#005A9C]" />}
+                  {isActive && <span className="w-2 h-2 rounded-full bg-[#1554B8]" />}
                 </button>
               );
             })}
           </div>
 
-          <div className="pt-3 border-t border-slate-200 flex flex-col gap-2">
+          <div className="pt-3 border-t border-[#E3DFD5] flex flex-col gap-2">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 handleNavClick('/contact');
               }}
-              className="w-full py-2.5 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-[#E1EEF8] border border-slate-200 flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-xl text-sm font-bold text-white bg-[#1554B8] hover:bg-[#104396] flex items-center justify-center gap-2 shadow-sm"
             >
-              <span>Get Free Consultation</span>
-            </button>
-
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenRegister();
-              }}
-              className="w-full py-3 rounded-xl text-sm font-bold text-white bg-[#005A9C] hover:bg-[#004A82] flex items-center justify-center gap-2 shadow-md shadow-[#005A9C]/30"
-            >
-              <span>Register Now on WhatsApp</span>
+              <span>Discuss Your Project</span>
               <ArrowUpRight className="w-4 h-4" />
             </button>
           </div>

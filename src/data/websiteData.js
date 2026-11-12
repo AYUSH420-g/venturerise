@@ -1,165 +1,148 @@
 export const siteConfig = {
-  name: "VENTURERISE",
-  tagline: "DIGITAL GROWTH PARTNER",
+  name: "venturerise",
+  brandWordmark: "venturerise",
+  tagline: "Practical Digital Solutions. Built Around You.",
   email: "venturerise@gmail.com",
   phone: "+91 8780788923",
   phoneRaw: "+918780788923",
   whatsappUrl: "https://wa.me/918780788923",
   location: "Ahmedabad, Gujarat",
-  hours: "Mon - Sat 10:00 AM - 7:00 PM",
-  welcomeBanner: "● Welcome to VENTURERISE",
+  welcomeBanner: "● Welcome to venturerise",
+  description: "venturerise helps small businesses grow with digital marketing, professional websites, practical tech solutions, and AI automation—all built around your goals.",
   socials: {
-    facebook: "https://www.facebook.com/profile.php?fb_profile_edit_entry_point=%7B%22click_point%22%3A%22edit_profile_button%22%2C%22feature%22%3A%22profile_header%22%7D&id=61593746004636&sk=about",
-    instagram: "https://www.instagram.com/digital_riseofficial/?hl=en",
+    facebook: "https://www.facebook.com",
+    instagram: "https://www.instagram.com",
     whatsapp: "https://wa.me/918780788923",
     linkedin: "https://www.linkedin.com"
   }
 };
 
-export const statsData = [
-  { value: "10,000+", label: "Active Users", change: "+14% MoM" },
-  { value: "500+", label: "Businesses", change: "+28% YoY" },
-  { value: "1M+", label: "Leads Generated", change: "Verified Pipeline" },
-  { value: "100%", label: "Growth Focused", change: "Outcome Based" }
-];
-
-export const liveDashboardData = {
-  totalLeads: "28,540",
-  totalLeadsChange: "+12.5%",
-  qualifiedLeads: "12,820",
-  qualifiedChange: "+8.7%",
-  conversionRate: "45.8%",
-  conversionChange: "+5.3%",
-  leadGrowth: "+24.8%",
-  campaignsActive: "126",
-  campaignGrowth: "+32%"
+export const heroContent = {
+  eyebrow: "DIGITAL GROWTH & TECHNOLOGY PARTNER",
+  headline: "Build Your Presence.\nGrow Your Reach.\nSimplify Your Work.",
+  description: "venturerise helps small businesses grow with digital marketing, professional websites, practical tech solutions, and AI automation—all built around your goals.",
+  primaryCta: "Discuss Your Project",
+  secondaryCta: "Explore Services",
+  supportingLine: "Digital Marketing • Websites • AI Automation • Tech Solutions"
 };
 
-export const heroSlides = [
+export const factualCapabilities = [
   {
-    badge: "DIGITAL GROWTH PARTNER",
-    title: "Generate Leads. Grow Business. Faster Together.",
-    subtitle: "VentureRise connects businesses with quality leads and helps them grow through targeted, result-driven digital campaigns.",
-    highlight: "Growth Focused · Data Driven · Business Friendly",
-    primaryCta: "Get Started",
-    secondaryCta: "Explore Services"
+    title: "Digital Marketing",
+    description: "Reach relevant audiences and create customer opportunities.",
+    icon: "Target"
   },
   {
-    badge: "DATA-DRIVEN MARKETING",
-    title: "Scale Qualified Revenue With Precision Targeting.",
-    subtitle: "We combine intelligent audience segmentation with high-converting funnels to deliver qualified leads that actually close.",
-    highlight: "High Quality Leads · Real-time Analytics · Dedicated Support",
-    primaryCta: "Start Growing",
-    secondaryCta: "See How It Works"
+    title: "Website Development",
+    description: "Build a professional, mobile-friendly online presence.",
+    icon: "Globe"
   },
   {
-    badge: "MULTI-CHANNEL CAMPAIGNS",
-    title: "Meta, Google & Social Funnels That Drive ROI.",
-    subtitle: "Stop burning budgets on vanity clicks. Harness automated lead verification, transparent reporting, and ongoing optimization.",
-    highlight: "Transparent Process · Verified Conversions · 24/7 Monitoring",
-    primaryCta: "Book Consultation",
-    secondaryCta: "View Campaigns"
+    title: "AI Automation",
+    description: "Simplify repetitive work and streamline enquiry handling.",
+    icon: "Sparkles"
+  },
+  {
+    title: "Tech Integrations",
+    description: "Connect your forms, records, and everyday business tools.",
+    icon: "Layers"
   }
 ];
 
 export const whatWeDoCards = [
   {
-    id: "lead-generation",
+    id: "digital-marketing",
     iconName: "Target",
-    title: "Targeted Lead Generation",
-    description: "Reach the right audience with targeted campaigns designed around your business niche and location.",
-    features: ["Audience segmentation", "Geo-targeted reach", "Verified email & phones", "Intent filtering"]
-  },
-  {
-    id: "quality-leads",
-    iconName: "CheckCircle",
-    title: "High Quality Leads",
-    description: "Focus on relevant prospects and build a stronger pipeline with quality-focused lead strategies.",
-    features: ["Pre-qualification filters", "Reduced bounce rate", "High closing ratios", "Custom survey forms"]
-  },
-  {
-    id: "analytics",
-    iconName: "BarChart3",
-    title: "Real-time Analytics",
-    description: "Monitor campaign performance, leads and growth insights through clear and actionable analytics.",
-    features: ["Live lead dashboard", "Cost per lead tracking", "Conversion attribution", "Weekly executive summaries"]
-  },
-  {
-    id: "support",
-    iconName: "Headphones",
-    title: "Dedicated Support",
-    description: "Get ongoing guidance and support to keep your campaigns moving in the right direction.",
-    features: ["Dedicated growth manager", "WhatsApp priority group", "Campaign review calls", "Continuous optimization"]
-  }
-];
-
-export const whyChooseUsFeatures = [
-  {
-    title: "Targeted Strategy",
-    description: "We focus on the audience that matters most to your business instead of generic spray-and-pray advertising."
-  },
-  {
-    title: "Data Driven",
-    description: "Campaign decisions are guided by performance and useful metrics that maximize your advertising return on investment."
-  },
-  {
-    title: "Dedicated Team",
-    description: "Experienced digital marketing specialists work closely with you from onboarding to continuous scale."
-  },
-  {
-    title: "Transparent Process",
-    description: "Clear communication, verified lead delivery, no hidden markups, and daily reporting access."
-  }
-];
-
-export const servicesDetailed = [
-  {
-    id: "seo",
-    num: "01",
-    title: "SEO & Organic Growth",
-    description: "Improve your search visibility, attract qualified visitors, and build sustainable organic growth.",
-    tags: ["On-Page SEO", "Technical SEO", "Local SEO", "Keyword Research"],
-    details: "We optimize your digital footprint with modern on-page structure, high-intent keyword targeting, site performance audits, schema markup, and authoritative backlink building that outranks your competitors organically."
-  },
-  {
-    id: "performance-marketing",
-    num: "02",
-    title: "Performance Marketing",
-    description: "Reach the right audience with high-performing campaigns designed to maximize your advertising ROI.",
-    tags: ["Google Ads", "Meta Ads", "Retargeting", "Campaign Optimization"],
-    details: "Laser-focused paid acquisition on Google Search, Performance Max, Instagram & Facebook Ads. We engineer compelling ad creatives, test multiple hooks, and refine bid strategies to continuously reduce cost-per-lead."
-  },
-  {
-    id: "social-media",
-    num: "03",
-    title: "Social Media Marketing",
-    description: "Build a strong social presence with engaging content and strategies that connect with your audience.",
-    tags: ["Instagram Marketing", "Facebook Marketing", "Content Strategy", "Social Media Management"],
-    details: "Transform your social channels into dynamic customer acquisition funnels with visually captivating designs, video reels, interactive stories, community engagement, and brand authority positioning."
+    title: "Digital Marketing & Lead Generation",
+    description: "Reach relevant audiences and create more opportunities through focused marketing and clear enquiry journeys.",
+    features: [
+      "Target audience planning",
+      "Focused ad campaigns",
+      "Clear enquiry journeys",
+      "Performance reviews"
+    ]
   },
   {
     id: "website-dev",
-    num: "04",
-    title: "Website Development",
-    description: "Create fast, modern and responsive websites that turn visitors into loyal customers.",
-    tags: ["Business Websites", "Landing Pages", "React Development", "Responsive UI"],
-    details: "Custom high-speed websites, sales funnels, and landing pages coded with modern React and Tailwind CSS. Designed to load under 1.5 seconds with optimal mobile responsiveness and seamless lead form integrations."
+    iconName: "Globe",
+    title: "Website Design & Development",
+    description: "Give your business a professional, mobile-friendly website that helps visitors understand your services and get in touch.",
+    features: [
+      "Clean, modern layouts",
+      "Mobile-friendly design",
+      "Service explanation pages",
+      "Seamless form integration"
+    ]
   },
   {
-    id: "lead-generation-service",
-    num: "05",
-    title: "Lead Generation",
-    description: "Generate high-quality leads through targeted campaigns, optimized funnels and conversion strategies.",
-    tags: ["Lead Campaigns", "Landing Pages", "Lead Funnels", "Conversion Optimization"],
-    details: "End-to-end lead generation infrastructure: customized capture forms, automatic OTP or email verification, CRM webhook sync, and instantaneous WhatsApp notification triggers for your sales reps."
+    id: "ai-automation",
+    iconName: "Sparkles",
+    title: "AI Automation",
+    description: "Reduce repetitive work with practical automation for enquiries, follow-ups, and everyday business tasks.",
+    features: [
+      "Enquiry routing",
+      "Automated notifications",
+      "Follow-up sequences",
+      "Task simplification"
+    ]
   },
   {
-    id: "branding",
-    num: "06",
-    title: "Branding & Creative",
-    description: "Build a memorable brand identity with creative designs that make your business stand out.",
-    tags: ["Logo Design", "Brand Identity", "Ad Creatives", "Social Media Designs"],
-    details: "Establish an unforgettable visual identity. From vector logo packages and typography systems to high-converting ad collaterals, pitch decks, and brand style guides."
+    id: "tech-solutions",
+    iconName: "Layers",
+    title: "Tech Solutions & Integrations",
+    description: "Connect your forms, customer records, and business tools so information moves more smoothly.",
+    features: [
+      "Tool connections",
+      "Form-to-CRM setup",
+      "Customer record sync",
+      "Process optimization"
+    ]
+  }
+];
+
+export const whyVenturerise = {
+  heading: "Practical Digital Solutions. Built Around You.",
+  description: "We bring marketing, websites, and technology together to help you address the challenges that matter to your business.",
+  cards: [
+    {
+      title: "Business-First Approach",
+      description: "We focus on the practical outcomes that help your business move forward."
+    },
+    {
+      title: "Connected Services",
+      description: "Marketing, websites, and technology working together rather than in isolation."
+    },
+    {
+      title: "Clear Communication",
+      description: "Plain language, transparent project scopes, and regular updates at every stage."
+    },
+    {
+      title: "Room to Grow",
+      description: "Solutions built to adapt and scale naturally as your business evolves."
+    }
+  ]
+};
+
+export const processStepsSummary = [
+  {
+    step: "01",
+    title: "Discover",
+    description: "Understand your business and priorities."
+  },
+  {
+    step: "02",
+    title: "Plan",
+    description: "Define the right approach and project scope."
+  },
+  {
+    step: "03",
+    title: "Build & Launch",
+    description: "Create, test, and launch the agreed solution."
+  },
+  {
+    step: "04",
+    title: "Review & Improve",
+    description: "Assess progress and identify next steps."
   }
 ];
 
@@ -168,106 +151,130 @@ export const processSteps = [
     step: "01",
     label: "STEP 01",
     title: "Discover",
-    subtitle: "We Understand Your Business",
-    description: "Before doing anything, we understand your business, target audience, competitors and growth goals. This helps us build a strategy that actually fits your business.",
-    items: ["Business Analysis", "Target Audience Research", "Competitor Analysis", "Goal Identification", "Current Performance Audit"]
+    subtitle: "Understanding Your Priorities",
+    description: "Understand your business, audience, existing tools, and priorities.",
+    items: [
+      "Business overview & goals",
+      "Target audience review",
+      "Current tools & website check",
+      "Key priority identification"
+    ]
   },
   {
     step: "02",
     label: "STEP 02",
     title: "Strategize",
-    subtitle: "We Build Your Growth Strategy",
-    description: "Once we understand your business, we create a customized digital strategy focused on achieving your specific goals.",
-    items: ["Marketing Strategy", "SEO Strategy", "Paid Ads Strategy", "Content Strategy", "Conversion Strategy"]
+    subtitle: "Agreeing on Scope",
+    description: "Agree on the scope and plan the right combination of marketing, website work, or automation.",
+    items: [
+      "Project scope definition",
+      "Channel & tool selection",
+      "Milestone planning",
+      "Transparent timeline estimate"
+    ]
   },
   {
     step: "03",
     label: "STEP 03",
     title: "Create",
-    subtitle: "We Build What Your Brand Needs",
-    description: "Our creative and development team turns the strategy into powerful digital experiences, content and marketing assets.",
-    items: ["Website & Landing Pages", "Ad Creatives", "Social Media Content", "SEO Content", "Brand Assets"]
+    subtitle: "Building the Solution",
+    description: "Build the agreed content, website elements, campaigns, or connected workflows.",
+    items: [
+      "Website & landing page build",
+      "Ad creative & message preparation",
+      "Workflow & automation setup",
+      "Quality and functional testing"
+    ]
   },
   {
     step: "04",
     label: "STEP 04",
     title: "Launch",
-    subtitle: "We Put Your Strategy Into Action",
-    description: "After everything is prepared and tested, we launch your campaigns, website and marketing activities.",
-    items: ["Campaign Setup", "Tracking & Analytics", "SEO Implementation", "Ad Launch", "Conversion Tracking"]
+    subtitle: "Deploying with Care",
+    description: "Test the work, check key journeys, and launch the solution.",
+    items: [
+      "Final review & verification",
+      "Form submission testing",
+      "Live deployment",
+      "Team walkthrough"
+    ]
   },
   {
     step: "05",
     label: "STEP 05",
     title: "Measure",
-    subtitle: "We Track What Matters",
-    description: "We continuously monitor performance and use real data to understand what's working and where to improve.",
-    items: ["Performance Tracking", "Data Analytics", "Conversion Rate Audit", "Cost Optimization", "Weekly Reporting"]
+    subtitle: "Reviewing Progress",
+    description: "Review relevant information such as enquiries, website activity, campaign performance, or workflow reliability.",
+    items: [
+      "Enquiry volume monitoring",
+      "Traffic & interaction review",
+      "Workflow reliability checks",
+      "Clear status updates"
+    ]
   },
   {
     step: "06",
     label: "STEP 06",
-    title: "Scale",
-    subtitle: "Sustained Long-Term Growth",
-    description: "Double down on top-performing angles and expand audiences across new geographies and channels.",
-    items: ["Budget Scaling", "Funnel Expansion", "Cross-Platform Growth", "Retargeting Maturation", "ROI Maximization"]
+    title: "Improve & Grow",
+    subtitle: "Iterative Refinement",
+    description: "Use what we learn to refine the solution and plan sensible next steps.",
+    items: [
+      "Creative & copy adjustments",
+      "Journey refinement",
+      "Feature expansion",
+      "Long-term capability building"
+    ]
   }
 ];
 
-export const campaignShowcase = [
+export const servicesDetailed = [
   {
-    id: 1,
-    title: "Lead Generation Campaign",
-    category: "Real Estate & Housing",
-    metric: "4,820+ Inquiries",
-    growth: "+148% ROI",
-    desc: "Targeted localized home buyer campaigns across metro regions with instant WhatsApp qualification.",
-    tags: ["Audience Targeting", "Lead Forms", "Landing Pages", "Conversion Optimization"]
+    id: "seo-local",
+    num: "01",
+    title: "SEO & Local Visibility",
+    description: "Help nearby customers find your business when they search for your services online.",
+    details: "We improve your website's search structure, target relevant local search phrases, and ensure your business details are accurate across search engines and business listings.",
+    tags: ["On-Page SEO", "Technical Improvements", "Local Search", "Keyword Planning"]
   },
   {
-    id: 2,
-    title: "Performance & Ads Campaign",
-    category: "EdTech & Higher Studies",
-    metric: "8,950+ Registrations",
-    growth: "+210% Enrollment",
-    desc: "Meta & Google Ads funnel driving prospective student admissions with smart retargeting sequences.",
-    tags: ["Google Ads", "Meta Ads", "Retargeting", "Cost Optimization"]
+    id: "paid-marketing",
+    num: "02",
+    title: "Paid Marketing & Lead Generation",
+    description: "Reach relevant audiences and create more opportunities through focused marketing and clear enquiry journeys.",
+    details: "We plan and manage targeted campaigns on platforms like Google and Meta, designing clear landing pages and enquiry forms that make it easy for interested prospects to get in touch.",
+    tags: ["Campaign Planning", "Audience Targeting", "Enquiry Forms", "Performance Review"]
   },
   {
-    id: 3,
-    title: "SEO Visibility Campaign",
-    category: "Healthcare & Diagnostics",
-    metric: "35,000+ Monthly Visitors",
-    growth: "+320% Organic Leads",
-    desc: "High-intent medical keywords optimization and local search rankings across 12 clinic hubs.",
-    tags: ["Keyword Strategy", "On-Page SEO", "Technical SEO", "Local Google Business"]
+    id: "social-media",
+    num: "03",
+    title: "Social Media & Content",
+    description: "Communicate clearly with your audience through consistent, professional social content.",
+    details: "We help you plan and publish engaging social updates, business announcements, and service highlights that keep your business visible and approachable to your community.",
+    tags: ["Content Planning", "Social Creatives", "Business Messaging", "Channel Management"]
   },
   {
-    id: 4,
-    title: "Social Growth Campaign",
-    category: "Fashion & Lifestyle D2C",
-    metric: "120K+ Engaged Followers",
-    growth: "4.8x Sales ROAS",
-    desc: "Dynamic influencer-style video creative strategy with catalog integration and instant checkout.",
-    tags: ["Content Strategy", "Creative Designs", "Audience Engagement", "Social Commerce"]
+    id: "website-dev",
+    num: "04",
+    title: "Website Design & Development",
+    description: "Give your business a professional, mobile-friendly website that helps visitors understand your services and get in touch.",
+    details: "We build clean, responsive websites and focused landing pages designed for clarity, fast browsing on mobile devices, and seamless contact form integration.",
+    tags: ["Business Websites", "Landing Pages", "Responsive Design", "Form Integration"]
   },
   {
-    id: 5,
-    title: "Conversion Landing Page Campaign",
-    category: "B2B SaaS Platform",
-    metric: "34.6% Page Conversion",
-    growth: "650+ Demo Bookings",
-    desc: "Lightning-fast React interactive landing experience with live calculator and friction-free booking.",
-    tags: ["Landing Pages", "Business Websites", "Conversion UI", "Performance Optimization"]
+    id: "ai-automation",
+    num: "05",
+    title: "AI Automation",
+    description: "Reduce repetitive work with practical automation for enquiries, follow-ups, and everyday business tasks.",
+    details: "We implement practical automation tools that route incoming leads, send immediate acknowledgment messages, trigger follow-up reminders, and handle common questions.",
+    tags: ["Enquiry Routing", "Follow-up Workflows", "AI-Assisted FAQs", "Task Automation"]
   },
   {
-    id: 6,
-    title: "Brand Awareness Campaign",
-    category: "Financial Advisory & Wealth",
-    metric: "1.2M Impressions",
-    growth: "+85% Brand Recall",
-    desc: "Omnichannel brand positioning, executive thought leadership, and trust-building video series.",
-    tags: ["Audience Research", "Brand Positioning", "Creative Collaterals", "Omnichannel Reach"]
+    id: "tech-solutions",
+    num: "06",
+    title: "Tech Solutions & Integrations",
+    description: "Connect your forms, customer records, and business tools so information moves more smoothly.",
+    details: "We connect your website forms with email notifications, customer management tools, calendars, and spreadsheets so you never lose track of an enquiry.",
+    tags: ["CRM Setup", "Tool Connections", "Data Workflows", "Technical Improvements"]
   }
 ];
 
@@ -276,118 +283,104 @@ export const pricingPlans = [
     name: "Trial",
     price: "₹4,999",
     period: "one-time / starter",
-    badge: "Starter Pack",
-    popular: false,
-    description: "Ideal for early-stage startups and small businesses testing digital lead generation.",
+    badge: "Starter Scope",
+    description: "A structured entry scope for small businesses getting started with digital marketing.",
     features: [
-      "Targeted Meta & Google Ad Setup",
-      "Up to 150 - 250 Targeted Leads",
-      "Dedicated Landing Page Template",
-      "Basic Audience Segmentation",
-      "Email & WhatsApp Inquiry Delivery",
-      "Campaign Performance Report"
+      "Targeted campaign setup (Google or Meta)",
+      "Audience niche & location targeting",
+      "Single focused enquiry landing page",
+      "Direct enquiry routing to WhatsApp & email",
+      "Campaign review and performance report"
     ]
   },
   {
     name: "Basic",
     price: "₹11,999",
     period: "per month",
-    badge: "Most Popular",
-    popular: true,
-    description: "Comprehensive package for local businesses seeking consistent monthly inquiries.",
+    badge: "Core Scope",
+    description: "Ongoing marketing support for businesses seeking steady enquiry flow.",
     features: [
-      "Full Multi-Ad Creative Design (5 sets)",
-      "Up to 500 - 800 Verified Leads",
-      "Custom Conversion Landing Page",
-      "Audience Niche & Geo Filtering",
-      "Real-Time WhatsApp Notifications",
-      "Bi-Weekly Strategy & Optimization",
-      "Dedicated Growth Manager"
+      "Active multi-ad creative set preparation",
+      "Ongoing campaign monitoring & budget optimization",
+      "Conversion-focused landing page maintenance",
+      "Target audience adjustments based on response",
+      "Bi-weekly progress check-ins",
+      "Direct contact with your growth coordinator"
     ]
   },
   {
     name: "Gold",
     price: "₹19,999",
     period: "per month",
-    badge: "High Growth",
-    popular: false,
-    description: "Accelerated growth solution for established businesses expanding their market reach.",
+    badge: "Growth Scope",
+    description: "Expanded digital marketing and web solutions for growing businesses.",
     features: [
-      "Omnichannel (Meta, Google & LinkedIn)",
-      "Up to 1,500+ Qualified Leads",
-      "High-Speed Custom Funnel Development",
-      "Advanced Lead Verification & Screening",
-      "CRM Webhook Integration",
-      "Weekly Performance Review Calls",
-      "A/B Split Testing Optimization"
+      "Multi-channel marketing management",
+      "Dedicated landing pages & form improvements",
+      "Form-to-CRM or spreadsheet integration",
+      "Audience segmentation & retargeting setup",
+      "Weekly progress check-ins and reporting",
+      "Monthly strategy alignment"
     ]
   },
   {
     name: "Premium",
     price: "₹24,999",
     period: "per month",
-    badge: "Enterprise",
-    popular: false,
-    description: "Full-scale 360° digital agency partnership for ambitious brands and enterprises.",
+    badge: "Comprehensive Scope",
+    description: "Comprehensive digital growth, website, and technology partnership.",
     features: [
-      "Custom Lead Scale (2,500+ Qualified Leads)",
-      "Dedicated Senior Growth Strategist",
-      "Complete SEO, Ads & Content Production",
-      "Custom Interactive Dashboard Access",
-      "Automated WhatsApp Bot Integration",
-      "24/7 Priority Support & Emergency Fixes",
-      "Quarterly Market Expansion Strategy"
+      "Full digital campaign planning & oversight",
+      "Website enhancements & landing page development",
+      "Practical AI enquiry & follow-up workflow setup",
+      "Business tool and database connections",
+      "Dedicated growth coordination",
+      "Ongoing technical reviews and priority adjustments"
     ]
+  }
+];
+
+export const howWeHelpExamples = [
+  {
+    title: "Building a Clear Online Presence",
+    category: "Website Design & Local Visibility",
+    description: "Helping local and professional service businesses create modern, mobile-friendly websites that explain their work clearly and make customer enquiries straightforward."
+  },
+  {
+    title: "Simplifying Enquiry Follow-ups",
+    category: "AI Automation & Workflows",
+    description: "Helping growing teams automate initial confirmations, route customer messages, and organize incoming requests without losing track."
+  },
+  {
+    title: "Connecting Marketing and Technology",
+    category: "Marketing & Tech Integrations",
+    description: "Helping small businesses link their online ads, landing page forms, and customer spreadsheets into one cohesive, manageable system."
   }
 ];
 
 export const faqList = [
   {
-    question: "How long does it take to see results?",
-    answer: "For paid lead generation and performance advertising campaigns, inquiries typically start coming in within 24 to 48 hours after campaign launch. For organic SEO and content strategies, noticeable ranking improvements and sustainable traffic gains generally compound over 3 to 6 months."
-  },
-  {
-    question: "Will I receive regular reports?",
-    answer: "Yes, absolutely! We believe in complete transparency. You receive access to a real-time lead tracking dashboard, plus detailed weekly and monthly performance reports breaking down spend, cost-per-lead, conversion rates, and optimization milestones."
-  },
-  {
-    question: "Can I choose individual services?",
-    answer: "Absolutely. While many clients select our complete 360° digital growth packages, you are completely free to choose standalone services such as Paid Lead Generation, SEO, Website Development, or Social Media Management based on your exact business needs."
+    question: "Can I choose an individual service?",
+    answer: "Yes. You can work with us on a single focused project—such as a new website, a targeted marketing campaign, or an automation setup—or combine services based on your business priorities."
   },
   {
     question: "Do you work with small businesses?",
-    answer: "Yes! Our strategies and campaign budgets are tailored for businesses of all stages — from local service providers and early startups needing their first 50 customers to mature companies scaling to thousands of leads per month."
+    answer: "Yes. Our services are specifically designed for small businesses, local service providers, and growing teams that need practical, manageable digital solutions without unnecessary complexity."
   },
   {
-    question: "Can the strategy change later?",
-    answer: "Yes! Digital marketing is an agile, iterative process. Based on real conversion data and your evolving business priorities, we continually tweak targeting, ad angles, budgets, and funnels to maximize your return on investment."
+    question: "How is the project scope decided?",
+    answer: "We start with a conversation to understand your goals, current setup, and priorities. Based on what you need, we agree on a clear scope and timeline before any work begins."
   },
   {
-    question: "How are the leads delivered to me?",
-    answer: "Leads are delivered instantaneously to your phone via WhatsApp notifications, straight into your inbox via email, and can be synced directly with your preferred CRM (like Zoho, Salesforce, Google Sheets, or HubSpot)."
-  }
-];
-
-export const testimonials = [
-  {
-    quote: "VentureRise transformed our real estate sales pipeline. We saw a 3x surge in qualified site visits within the first 30 days of launching the campaigns.",
-    name: "Rajesh Sharma",
-    role: "Managing Director, Apex Properties",
-    rating: 5,
-    location: "Indore"
+    question: "How long will my project take?",
+    answer: "Timelines depend on the project scope, required technical setup, content readiness, and review cycles. A focused website or campaign setup often takes 1 to 3 weeks, while comprehensive setups are planned in structured milestones."
   },
   {
-    quote: "The quality of leads is night and day compared to generic agencies. Their automated qualification filters saved our sales team countless hours.",
-    name: "Pooja Varma",
-    role: "Co-Founder, EduBridge Institute",
-    rating: 5,
-    location: "Ahmedabad"
+    question: "Can you improve my existing website or tools?",
+    answer: "Yes. We can review and update existing websites, connect your current tools, improve enquiry forms, or add automation without having to rebuild everything from scratch."
   },
   {
-    quote: "Superb execution, transparent reporting, and VentureRise's team is always responsive. Their Basic plan gave us an ROI of over 300% on ad spend.",
-    name: "Vikram Malhotra",
-    role: "Director, CarePlus Healthcare",
-    rating: 5,
-    location: "Pune"
+    question: "What happens after launch?",
+    answer: "Depending on the agreed arrangement, we can provide ongoing campaign management, workflow adjustments, website maintenance, or hand over the completed work with clear guidance for your team."
   }
 ];
