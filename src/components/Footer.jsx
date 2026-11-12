@@ -54,8 +54,8 @@ export default function Footer({ setCurrentRoute, onShowToast }) {
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#1554B8] flex items-center justify-center text-white font-extrabold text-base tracking-tighter shadow-sm">
-                vr
+              <div className="w-10 h-10 rounded-xl overflow-hidden shadow-sm border border-[#E3DFD5] bg-[#F7F4EC] flex items-center justify-center">
+                <img src="/favicon.png" alt="venturerise logo" className="w-full h-full object-contain" />
               </div>
               <span className="text-2xl font-black text-[#14243B] tracking-tight lowercase">
                 venturerise

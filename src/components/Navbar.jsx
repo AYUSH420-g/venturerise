@@ -43,8 +43,8 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister }
             className="flex items-center gap-3 text-left focus:outline-none group"
             aria-label="venturerise home"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#1554B8] flex items-center justify-center text-white font-extrabold text-base tracking-tighter shadow-sm group-hover:bg-[#104396] transition-colors">
-              vr
+            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-sm border border-[#E3DFD5] bg-[#F7F4EC] flex items-center justify-center group-hover:border-[#1554B8] transition-colors">
+              <img src="/favicon.png" alt="venturerise logo" className="w-full h-full object-contain" />
             </div>
             <div>
               <span className="text-xl sm:text-2xl font-black tracking-tight text-[#14243B] lowercase font-sans">
