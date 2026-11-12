@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #F8F9FA;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F3F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #C2DCF1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #005A9C;
+}
+
+/* Sapphire Blue Glow and Card Styles */
+.glow-sapphire {
+  box-shadow: 0 10px 30px -5px rgba(0, 90, 156, 0.22);
+}
+
+.glow-sapphire-sm {
+  box-shadow: 0 4px 15px -2px rgba(0, 90, 156, 0.15);
+}
+
+.card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 28px -6px rgba(0, 90, 156, 0.08), 0 6px 12px -4px rgba(0, 0, 0, 0.04);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
