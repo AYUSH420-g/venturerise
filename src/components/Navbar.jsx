@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { siteConfig } from '../data/websiteData';
 
-export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister, onOpenCalculator }) {
+export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -44,11 +44,11 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister, 
             className="flex items-center gap-3 text-left focus:outline-none group"
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#005A9C] to-[#0284C7] flex items-center justify-center text-white shadow-md shadow-[#005A9C]/30 group-hover:scale-105 transition-transform">
-              <span className="font-extrabold text-xl tracking-tighter">DR</span>
+              <span className="font-extrabold text-xl tracking-tighter">VR</span>
             </div>
             <div>
               <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 flex items-center">
-                DIGITAL <span className="text-[#005A9C] ml-1.5 font-extrabold">RISE</span>
+                VENTURE <span className="text-[#005A9C] ml-1.5 font-extrabold">RISE</span>
               </span>
               <span className="block text-[10px] tracking-widest uppercase font-semibold text-slate-500">
                 Growth Partner
@@ -82,11 +82,10 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister, 
           {/* Action CTAs */}
           <div className="hidden lg:flex items-center gap-3">
             <button
-              onClick={onOpenCalculator}
-              className="px-3.5 py-2 rounded-full text-xs font-semibold text-slate-700 hover:text-[#005A9C] bg-[#F1F3F5] hover:bg-[#E1EEF8] border border-slate-200 transition flex items-center gap-1.5 shadow-sm"
+              onClick={() => handleNavClick('/contact')}
+              className="px-4 py-2 rounded-full text-xs font-semibold text-slate-700 hover:text-[#005A9C] bg-[#F1F3F5] hover:bg-[#E1EEF8] border border-slate-200 transition flex items-center gap-1.5 shadow-sm"
             >
-              <Sparkles className="w-3.5 h-3.5 text-[#005A9C]" />
-              ROI Calculator
+              Get Free Consultation
             </button>
 
             <button
@@ -144,12 +143,11 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister, 
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenCalculator();
+                handleNavClick('/contact');
               }}
               className="w-full py-2.5 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-[#E1EEF8] border border-slate-200 flex items-center justify-center gap-2"
             >
-              <Sparkles className="w-4 h-4 text-[#005A9C]" />
-              <span>Free Lead ROI Estimator</span>
+              <span>Get Free Consultation</span>
             </button>
 
             <button
@@ -162,11 +160,6 @@ export default function Navbar({ currentRoute, setCurrentRoute, onOpenRegister, 
               <span>Register Now on WhatsApp</span>
               <ArrowUpRight className="w-4 h-4" />
             </button>
-
-            <div className="mt-2 text-center text-xs text-slate-500 space-y-1">
-              <p>Email: {siteConfig.email}</p>
-              <p>Direct Call: {siteConfig.phone}</p>
-            </div>
           </div>
         </div>
       )}

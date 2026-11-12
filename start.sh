@@ -1,33 +1,33 @@
 #!/bin/bash
 
 # ==============================================================================
-# DIGITAL RISE — Full-Stack Launcher (React + Node.js)
+# VENTURERISE — Full-Stack Launcher (React + Node.js)
 # ==============================================================================
 
 set -e
 
 # Terminal Colors
 CYAN='\033[0;36m'
-ROSE='\033[0;31m'
+BLUE='\033[0;34m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BOLD='\033[1m'
 NC='\033[0m' # No Color
 
-echo -e "${ROSE}${BOLD}"
+echo -e "${BLUE}${BOLD}"
 echo "=========================================================="
-echo "           🚀 DIGITAL RISE INDIA — FULL-STACK             "
+echo "           🚀 VENTURERISE — FULL-STACK LAUNCHER           "
 echo "=========================================================="
 echo -e "${NC}"
 
 # Check Node.js and npm
 if ! command -v node &> /dev/null; then
-    echo -e "${ROSE}Error: Node.js is not installed. Please install Node.js (v18+) to proceed.${NC}"
+    echo -e "${YELLOW}Error: Node.js is not installed. Please install Node.js (v18+) to proceed.${NC}"
     exit 1
 fi
 
 if ! command -v npm &> /dev/null; then
-    echo -e "${ROSE}Error: npm is not installed.${NC}"
+    echo -e "${YELLOW}Error: npm is not installed.${NC}"
     exit 1
 fi
 
@@ -52,7 +52,7 @@ if [ "$MODE" = "--dev" ] || [ "$MODE" = "dev" ]; then
 
     # Trap to kill both processes on exit
     cleanup() {
-        echo -e "\n${ROSE}Stopping development servers...${NC}"
+        echo -e "\n${BLUE}Stopping development servers...${NC}"
         kill $(jobs -p) 2>/dev/null || true
         exit 0
     }
@@ -68,19 +68,12 @@ if [ "$MODE" = "--dev" ] || [ "$MODE" = "dev" ]; then
 
     wait
 else
-    echo -e "\n${BOLD}${CYAN}▶ Starting in PRODUCTION mode...${NC}"
-
-    # Build if dist does not exist
-    if [ ! -d "dist" ]; then
-        echo -e "${YELLOW}⚡ Production build not found. Building with Vite...${NC}"
-        npm run build
-        echo -e "${GREEN}✓ Frontend built successfully into ./dist${NC}"
-    else
-        echo -e "${GREEN}✓ Using existing build in ./dist${NC}"
-    fi
+    echo -e "\n${BOLD}${CYAN}▶ Building fresh production assets with Vite...${NC}"
+    npm run build
+    echo -e "${GREEN}✓ Frontend built successfully into ./dist${NC}"
 
     echo -e "\n${BOLD}${GREEN}==========================================================${NC}"
-    echo -e "${BOLD}${GREEN}  Digital Rise is LIVE at: ${CYAN}http://localhost:5050        ${NC}"
+    echo -e "${BOLD}${GREEN}  VentureRise is LIVE at:  ${CYAN}http://localhost:5050        ${NC}"
     echo -e "${BOLD}${GREEN}  REST API endpoints at:   ${CYAN}http://localhost:5050/api    ${NC}"
     echo -e "${BOLD}${GREEN}==========================================================${NC}"
     echo -e "${YELLOW}Press [Ctrl+C] to stop the server.${NC}\n"

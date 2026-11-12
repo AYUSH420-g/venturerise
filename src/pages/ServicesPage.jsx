@@ -27,7 +27,7 @@ export default function ServicesPage({ setCurrentRoute }) {
 
   const handleEnquirePlan = (plan) => {
     const textMsg = encodeURIComponent(
-      `Hello Digital Rise, I would like to enquire about the ${plan.name} Plan (${plan.price}). Please share the onboarding process.`
+      `Hello VentureRise, I would like to enquire about the ${plan.name} Plan (${plan.price}). Please share the onboarding process.`
     );
     window.open(`https://wa.me/918780788923?text=${textMsg}`, '_blank');
   };

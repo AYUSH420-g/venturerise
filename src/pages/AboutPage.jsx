@@ -21,7 +21,7 @@ export default function AboutPage({ setCurrentRoute }) {
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E1EEF8] border border-[#C2DCF1] text-[#005A9C] text-xs font-bold uppercase tracking-widest shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-[#005A9C]"></span>
-                <span>ABOUT DIGITAL RISE</span>
+                <span>ABOUT VENTURERISE</span>
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
@@ -32,7 +32,7 @@ export default function AboutPage({ setCurrentRoute }) {
               </h1>
 
               <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
-                DIGITAL RISE is a performance-driven digital agency helping businesses attract the right audience, generate quality leads and build sustainable digital growth.
+                VENTURERISE is a performance-driven digital agency helping businesses attract the right audience, generate quality leads and build sustainable digital growth.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -81,7 +81,7 @@ export default function AboutPage({ setCurrentRoute }) {
 
                 <div className="mt-6 pt-5 border-t border-slate-200 flex items-center justify-between text-xs text-slate-600">
                   <span className="flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-[#005A9C]" /> Bhopal, Madhya Pradesh
+                    <MapPin className="w-3.5 h-3.5 text-[#005A9C]" /> Ahmedabad, Gujarat
                   </span>
                   <span className="text-slate-800 font-semibold">Serving Pan-India</span>
                 </div>
@@ -107,7 +107,7 @@ export default function AboutPage({ setCurrentRoute }) {
               </h2>
 
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                At DIGITAL RISE, we believe digital marketing should do more than create visibility — it should create opportunities.
+                At VENTURERISE, we believe digital marketing should do more than create visibility — it should create opportunities.
               </p>
 
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">

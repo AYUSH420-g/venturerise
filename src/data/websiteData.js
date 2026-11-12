@@ -1,13 +1,13 @@
 export const siteConfig = {
-  name: "DIGITAL RISE",
+  name: "VENTURERISE",
   tagline: "DIGITAL GROWTH PARTNER",
   email: "venturerise@gmail.com",
   phone: "+91 8780788923",
   phoneRaw: "+918780788923",
   whatsappUrl: "https://wa.me/918780788923",
-  location: "Bhopal, Madhya Pradesh",
+  location: "Ahmedabad, Gujarat",
   hours: "Mon - Sat 10:00 AM - 7:00 PM",
-  welcomeBanner: "● Welcome to DIGITAL RISE",
+  welcomeBanner: "● Welcome to VENTURERISE",
   socials: {
     facebook: "https://www.facebook.com/profile.php?fb_profile_edit_entry_point=%7B%22click_point%22%3A%22edit_profile_button%22%2C%22feature%22%3A%22profile_header%22%7D&id=61593746004636&sk=about",
     instagram: "https://www.instagram.com/digital_riseofficial/?hl=en",
@@ -39,7 +39,7 @@ export const heroSlides = [
   {
     badge: "DIGITAL GROWTH PARTNER",
     title: "Generate Leads. Grow Business. Faster Together.",
-    subtitle: "Digital Rise connects businesses with quality leads and helps them grow through targeted, result-driven digital campaigns.",
+    subtitle: "VentureRise connects businesses with quality leads and helps them grow through targeted, result-driven digital campaigns.",
     highlight: "Growth Focused · Data Driven · Business Friendly",
     primaryCta: "Get Started",
     secondaryCta: "Explore Services"
@@ -370,7 +370,7 @@ export const faqList = [
 
 export const testimonials = [
   {
-    quote: "Digital Rise transformed our real estate sales pipeline. We saw a 3x surge in qualified site visits within the first 30 days of launching the campaigns.",
+    quote: "VentureRise transformed our real estate sales pipeline. We saw a 3x surge in qualified site visits within the first 30 days of launching the campaigns.",
     name: "Rajesh Sharma",
     role: "Managing Director, Apex Properties",
     rating: 5,
@@ -381,10 +381,10 @@ export const testimonials = [
     name: "Pooja Varma",
     role: "Co-Founder, EduBridge Institute",
     rating: 5,
-    location: "Bhopal"
+    location: "Ahmedabad"
   },
   {
-    quote: "Superb execution, transparent reporting, and Khushbu's team is always responsive. Their Basic plan gave us an ROI of over 300% on ad spend.",
+    quote: "Superb execution, transparent reporting, and VentureRise's team is always responsive. Their Basic plan gave us an ROI of over 300% on ad spend.",
     name: "Vikram Malhotra",
     role: "Director, CarePlus Healthcare",
     rating: 5,

@@ -102,7 +102,7 @@ app.post('/api/chat-enquiry', (req, res) => {
 
   res.status(201).json({
     success: true,
-    message: `Thank you ${name || ''}! Khushbu Patel and our team have received your request for the ${plan || 'selected'} plan.`
+    message: `Thank you ${name || ''}! Our strategy team has received your request for the ${plan || 'selected'} plan.`
   });
 });
 

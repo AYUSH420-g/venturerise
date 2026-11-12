@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import ChatWidget from './components/ChatWidget';
 import RegisterModal from './components/RegisterModal';
-import LeadCalculatorModal from './components/LeadCalculatorModal';
 import Toast from './components/Toast';
 
 import HomePage from './pages/HomePage';
@@ -18,7 +16,6 @@ import LegalPage from './pages/LegalPage';
 export default function App() {
   const [currentRoute, setCurrentRoute] = useState(window.location.pathname || '/');
   const [registerOpen, setRegisterOpen] = useState(false);
-  const [calculatorOpen, setCalculatorOpen] = useState(false);
   const [toast, setToast] = useState(null);
 
   // Sync route with browser history
@@ -71,7 +68,6 @@ export default function App() {
           <HomePage
             setCurrentRoute={navigateTo}
             onOpenRegister={() => setRegisterOpen(true)}
-            onOpenCalculator={() => setCalculatorOpen(true)}
           />
         );
     }
@@ -87,7 +83,6 @@ export default function App() {
         currentRoute={currentRoute}
         setCurrentRoute={navigateTo}
         onOpenRegister={() => setRegisterOpen(true)}
-        onOpenCalculator={() => setCalculatorOpen(true)}
       />
 
       {/* Page Content */}
@@ -101,26 +96,11 @@ export default function App() {
         onShowToast={showToast}
       />
 
-      {/* Floating Interactive Live Chat Assistant (Khushbu Patel) */}
-      <ChatWidget
-        onShowToast={showToast}
-        setCurrentRoute={navigateTo}
-      />
-
-      {/* Modals */}
+      {/* Register Modal */}
       <RegisterModal
         isOpen={registerOpen}
         onClose={() => setRegisterOpen(false)}
         onShowToast={showToast}
-      />
-
-      <LeadCalculatorModal
-        isOpen={calculatorOpen}
-        onClose={() => setCalculatorOpen(false)}
-        onSelectPlan={(plan) => {
-          navigateTo('/contact');
-          showToast({ type: 'success', message: `Selected ${plan}. Let's finalize your campaign!` });
-        }}
       />
 
       {/* Floating Notifications */}

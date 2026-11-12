@@ -10,7 +10,7 @@ import {
   testimonials, pricingPlans 
 } from '../data/websiteData';
 
-export default function HomePage({ setCurrentRoute, onOpenRegister, onOpenCalculator }) {
+export default function HomePage({ setCurrentRoute, onOpenRegister }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Auto rotate slides
@@ -343,14 +343,14 @@ export default function HomePage({ setCurrentRoute, onOpenRegister, onOpenCalcul
         </div>
       </section>
 
-      {/* WHY DIGITAL RISE SECTION */}
+      {/* WHY VENTURERISE SECTION */}
       <section className="py-20 bg-white border-y border-slate-200/80 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-6 space-y-6">
               <span className="text-xs font-bold uppercase tracking-widest text-[#005A9C]">
-                WHY DIGITAL RISE
+                WHY VENTURERISE
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
                 Digital Marketing Built Around Growth.
@@ -494,15 +494,15 @@ export default function HomePage({ setCurrentRoute, onOpenRegister, onOpenCalcul
                 How Many Leads Can You Generate This Month?
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 max-w-xl">
-                Use our interactive lead estimator to see projected inquiries, reach, and recommended plans based on your industry.
+                Connect with our performance marketing strategists to get a customized growth blueprint tailored to your business.
               </p>
             </div>
 
             <button
-              onClick={onOpenCalculator}
+              onClick={() => nav('/contact')}
               className="px-8 py-4 rounded-full text-sm font-black text-white bg-[#005A9C] hover:bg-[#004A82] shadow-xl shadow-[#005A9C]/30 transition transform hover:scale-105 shrink-0 flex items-center gap-2"
             >
-              <span>Launch Lead Calculator</span>
+              <span>Get Free Strategy Call</span>
               <Sparkles className="w-4 h-4" />
             </button>
           </div>
@@ -521,7 +521,7 @@ export default function HomePage({ setCurrentRoute, onOpenRegister, onOpenCalcul
               Trusted by Ambitious Brands Across India.
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Read how businesses scaled their revenue and customer acquisition with Digital Rise campaigns.
+              Read how businesses scaled their revenue and customer acquisition with VentureRise campaigns.
             </p>
           </div>
 

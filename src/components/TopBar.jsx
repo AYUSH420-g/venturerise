@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { siteConfig } from '../data/websiteData';
 
 export default function TopBar() {
@@ -35,9 +35,9 @@ export default function TopBar() {
             <span>{siteConfig.phone}</span>
           </a>
 
-          <div className="hidden lg:flex items-center gap-1.5 text-blue-200">
-            <Clock className="w-3.5 h-3.5 text-cyan-300" />
-            <span>{siteConfig.hours}</span>
+          <div className="hidden sm:flex items-center gap-1.5 text-blue-200">
+            <MapPin className="w-3.5 h-3.5 text-cyan-300" />
+            <span>{siteConfig.location}</span>
           </div>
         </div>
       </div>
